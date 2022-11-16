@@ -9903,13 +9903,13 @@ a:focus {
 
 .bg-gradient-primary {
   background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+  background-image: linear-gradient(180deg, #474747 10%, #464647 100%);
   background-size: cover;
 }
 
 .bg-gradient-secondary {
   background-color: #858796;
-  background-image: linear-gradient(180deg, #858796 10%, #60616f 100%);
+  background-image: linear-gradient(180deg, #a0a0a0 10%, #9b9b9b 100%);
   background-size: cover;
 }
 

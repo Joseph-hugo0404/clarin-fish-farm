@@ -1,6 +1,16 @@
 @extends('page')
 @section('title','All Customers')
 @section('content')
+
+<h2 class="mt-3">Customer Management</h2>
+<hr>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/customer">Customer</a></li>
+      <li class="breadcrumb-item active">Customer List</li>
+    </ol>
+</nav>
+
 <div class="card mb-4 mt-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -16,34 +26,25 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Full</th>
-                                            <th>Contact Number</th>
+                                            <th>Mobile Number</th>
                                             <th>Photo</th>
                                             <th>Address</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Full</th>
-                                            <th>Photo</th>
-                                            <th>Address</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                     	@if($data)
 	                                    	@foreach($data as $d)
 	                                        <tr>
 	                                            <td>{{$d->id}}</td>
                                                 <td>{{$d->full_name}}</td>
-                                                <td>{{$d->contact_number}}</td>
+                                                <td>{{$d->mobile}}</td>
                                                 <td><img src="{{asset('public/images/'.$d->photo)}}" width="80" /></td>
                                                 <td>{{$d->address}}</td>
                                                 <td>
-                                                    <a href="{{url('customer/'.$d->id)}}" class="btn btn-warning btn-sm">Show</a>
-                                                    <a href="{{url('customer/'.$d->id.'/edit')}}" class="btn btn-info btn-sm">Update</a>
-                                                    <a onclick="return confirm('Are you sure to delete this data?')" href="{{url('customer/'.$d->id.'/delete')}}" class="btn btn-danger btn-sm">Delete</a>
+                                                    <a href="{{url('customer/'.$d->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-eye"></i></a>
+                                                    <a href="{{url('customer/'.$d->id.'/edit')}}" class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                                    <a onclick="return confirm('Are you sure to delete this data?')" href="{{url('customer/'.$d->id.'/delete')}}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
                                                 </td>
 	                                        </tr>
 	                                        @endforeach

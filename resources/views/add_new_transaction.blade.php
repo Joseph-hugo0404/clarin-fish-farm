@@ -12,7 +12,7 @@
 </nav>
 
 <div class="row mt-4">
-	<div class="col-md-5">
+	<div class="col-md-5 mx-auto">
 		<div class="card">
 			<div class="card-header">Add New Transaction</div>
 			<div class="card-body">

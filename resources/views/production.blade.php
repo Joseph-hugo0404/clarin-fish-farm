@@ -11,7 +11,7 @@
 
 <canvas id="myChart" height="100px" style="margin-top: 2%"></canvas>
 <a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production_weekly"><i class="fas fa-chart-area"></i> Weekly</a>
-<a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production"><i class="fas fa-chart-area"></i> Monthly</a>
+<a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production"><i class=" fas fa-chart-area"></i> Monthly</a>
 <a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production_yearly"><i class="fas fa-chart-area"></i> Yearly</a>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

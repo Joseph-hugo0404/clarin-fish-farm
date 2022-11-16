@@ -1,6 +1,14 @@
 @extends('page')
 @section('title','Add Customer')
 @section('content')
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/customer">Customer</a></li>
+      <li class="breadcrumb-item active">Add New</li>
+    </ol>
+</nav>
+
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -55,7 +63,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" class="btn btn-primary" value="Submit" />
+                        <input type="submit" class="btn btn-primary" href="/customer" value="Submit" />
                     </td>
                 </tr>
             </table>

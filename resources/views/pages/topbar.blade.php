@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar topbar bfar-bg mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -33,15 +33,15 @@
         </li>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-              <i class="nav fas fa-users" style="color:lightgreen;display: block;margin-left: auto;margin-right: auto;width: 50%;margin-top:5%"></i>
-              <a class="nav" href="{{ route('profile') }}" style="margin-right: 0px;color: rgb(2, 2, 2);text-decoration: none;">{{ Auth::user()->name }}</a>
+              <i class="nav fas fa-user" style="color:lightgreen;display: block;margin-left: auto;margin-right: auto;width: 50%;margin-top:5%"></i>
+              <a class="nav" href="{{ route('profile') }}" style="margin-right: 0px;color: rgb(255, 255, 255);text-decoration: none;font-size: 15px">{{ Auth::user()->name }}</a>
             </li>
         
         <div class="topbar-divider d-none d-sm-block"></div>
 
             <li class="nav-item">
-                <i class="nav fas fa-long-arrow-alt-right" style="color:lightgreen;display: block;margin-left: auto;margin-right: auto;width: 50%;margin-top:5%"></i>
-                <a class="nav" href="{{ route('logout') }}" style="margin-right: 0px;color: rgb(0, 0, 0);text-decoration: none;">Logout</a>
+                <i class="nav fas fa-right-to-bracket" style="color:lightgreen;display: block;margin-left: auto;margin-right: auto;width: 50%;margin-top:5%"></i>
+                <a class="nav" href="{{ route('logout') }}" style="margin-right: 0px;color: rgb(255, 255, 255);text-decoration: none;font-size: 15px">Logout</a>
             </li>
         </ul>
         <!-- Nav Item - User Information -->

@@ -1,9 +1,9 @@
 @extends('dashboard')
 @section('content')
 
-<section class="">
+<section class="container mt-5 mb-5">
 	<!-- Jumbotron -->
-	<div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+	<div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 87%)">
 	  <div class="container">
 		<div class="row gx-lg-5 align-items-center">
 		  <div class="col-lg-6 mb-5 mb-lg-0">
@@ -60,12 +60,9 @@
 				  </div>
   
 				  <!-- Submit button -->
-				  <button type="submit" class="btn btn-success btn-block mb-4">
+				  <button type="submit" class="btn btn-success btn-block mb-4 float-end">
 					Sign Up
 				  </button>
-                  <div class="btn btn-primary btn-block mb-4 float-end">
-                    <a href="{{ route('login') }}" style="color: white;text-decoration:none;">Login</a>
-                </div>
 				</form>
 			  </div>
 			</div>

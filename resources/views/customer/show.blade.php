@@ -1,6 +1,13 @@
 @extends('page')
 @section('title','View Customer')
 @section('content')
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/customer">Customer</a></li>
+      <li class="breadcrumb-item active">Show Customer</li>
+    </ol>
+</nav>
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>

@@ -49,6 +49,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('all_transaction/edit/{id}', [AllTransactionController::class, 'edit'])->name('edit');
     Route::post('all_transaction/edit_validation', [AllTransactionController::class, 'edit_validation'])->name('all_transaction.edit_validation');
     Route::post('all_transaction/edit_validation2', [AllTransactionController::class, 'edit_validation2'])->name('all_transaction.edit_validation2');
+    Route::get('all_transaction/show/{id}', [AllTransactionController::class, 'show'])->name('show');
     Route::get('all_transaction/delete/{id}', [AllTransactionController::class, 'delete'])->name('delete');
     Route::get('all_transaction/printpreview', [AllTransactionController::class, 'printpreview'])->name('all_transaction.print');
     Route::get('production', [GraphController::class, 'monthly'])->name('production');

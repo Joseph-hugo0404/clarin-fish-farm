@@ -1,19 +1,19 @@
 @extends('page')
 @section('title','Update Customer')
 @section('content')
-
+<nav aria-label="breadcrumb">
+        <hr>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/customer">Customer</a></li>
+      <li class="breadcrumb-item active">Edit Selected Customer</li>
+    </ol>
+</nav>
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Update Customer
         
-    <nav aria-label="breadcrumb">
-        <hr>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/customer">View All</a></li>
-      <li class="breadcrumb-item active">Edit Selected Customer</li>
-    </ol>
-</nav>
+    
 <a href="{{url('customer')}}" class="float-end btn btn-sm btn-success" style="margin-top: -10px">View All</a>
 </div>
     

@@ -39,7 +39,6 @@ class CustomerContoller extends Controller
     {
         $request->validate([
             'full_name'=>'required',
-            'contact_number'=>'required',
             'photo'=>'required|image|mimes:jpg,png,gif',
             'address'=>'required',
             'mobile'=>'required',
@@ -53,7 +52,6 @@ class CustomerContoller extends Controller
 
         $data=new Customer();
         $data->full_name=$request->full_name;
-        $data->contact_number=$request->contact_number;
         $data->photo=$renamePhoto;
         $data->address=$request->address;
         $data->mobile=$request->mobile;
@@ -99,7 +97,6 @@ class CustomerContoller extends Controller
     {
         $request->validate([
             'full_name'=>'required',
-            'contact_number'=>'required',
             'address'=>'required',
             'mobile'=>'required',
             'status'=>'required',
@@ -117,7 +114,6 @@ class CustomerContoller extends Controller
 
         $data=Customer::find($id);
         $data->full_name=$request->full_name;
-        $data->contact_number=$request->contact_number;
         $data->photo=$renamePhoto;
         $data->address=$request->address;
         $data->mobile=$request->mobile;

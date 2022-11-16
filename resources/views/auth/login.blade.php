@@ -1,9 +1,9 @@
 @extends('dashboard')
 @section('content')
 
- <section class="">
+ <section class="container mt-5 mb-5">
 	<!-- Jumbotron -->
-	<div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+	<div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 87%)">
 	  <div class="container">
 		<div class="row gx-lg-5 align-items-center">
 		  <div class="col-lg-6 mb-5 mb-lg-0">
@@ -16,14 +16,10 @@
 			  <div class="card-body py-5 px-md-5">
 				<main class="login-form">
 
-					
-
 				<form method="post" action="{{ route('login.custom') }}">
-
-					
-					
-				  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-						<p class="lead fw-bold mb-5 me-">Clarin Freshwater Fish Farm Record Management System</p>
+										
+				  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-center">
+						<p class="lead fw-bold mb-5 ">Clarin Freshwater Fish Farm System</p>
 				  </div>
 
 				  @if (session()->has('error'))
@@ -56,8 +52,8 @@
 						@endif
 				  </div>
   
-				  <!-- Submit button -->
-				  <button type="submit" class="btn btn-primary btn-block mb-4">
+				  <!-- Submit button --> 
+				  <button type="submit" class="btn btn-primary float-center mb-4"> 
 					LOGIN
 				  </button>
 				</form>

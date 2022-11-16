@@ -19,6 +19,12 @@ class AllTransactionController extends Controller
         $this->middleware('auth');
     }
 
+    public function show($id)
+    {
+        $data=AllTransaction::findOrFail($id);
+        return view('show_transaction',compact('data'));
+    }
+
     public function index()
     {
         return view('all_transaction');
@@ -33,7 +39,7 @@ class AllTransactionController extends Controller
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="/all_transaction/edit/'.$row->id.'" class="btn btn-primary btn-sm">Edit</a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'">Delete</button>';
+                        return '<a href="/all_transaction/edit/'.$row->id.'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);

@@ -34,7 +34,7 @@
 		        		<input type="password" name="password" class="form-control" placeholder="New Password" />
 		        	</div>
 		        	<div class="form-group mb-3">
-		        		<input type="submit" class="btn btn-primary" value="Save Changes" />
+		        		<input type="submit" class="btn btn-primary btn-center bfar-bg" value="Save Changes" />
 		        	</div>
 				</form>
 			</div>

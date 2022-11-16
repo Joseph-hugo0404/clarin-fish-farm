@@ -16,14 +16,12 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('customer_id')->unsigned();
             $table->string('full_name');
             $table->string('contact_number');
             $table->string('photo');
             $table->string('address');
             $table->string('mobile');
             $table->string('status');
-            $table->foreign('customer_id')->references('id')->on('all_transaction')->onDelete('cascade');
             $table->timestamps();
         });
     }
