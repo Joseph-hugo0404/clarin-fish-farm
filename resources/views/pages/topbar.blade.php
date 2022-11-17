@@ -41,12 +41,35 @@
 
             <li class="nav-item">
                 <i class="nav fas fa-right-to-bracket" style="color:lightgreen;display: block;margin-left: auto;margin-right: auto;width: 50%;margin-top:5%"></i>
-                <a class="nav" href="{{ route('logout') }}" style="margin-right: 0px;color: rgb(255, 255, 255);text-decoration: none;font-size: 15px">Logout</a>
+                <a class="nav" data-bs-toggle="modal" data-bs-target="#exampleModal" style="color: rgb(255, 255, 255);font-size: 15px">Logout</a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    {!! Form::open(['url'=>'/logout', 'method'=>'post']) !!}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" type="submit">
+                            Logout
+                        </button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+                </div>
+            </div>
+
             </li>
         </ul>
         <!-- Nav Item - User Information -->
-        
-
     </ul>
+
+        
+        <!-- Modal -->
 
 </nav>

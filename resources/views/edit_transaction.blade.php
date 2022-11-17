@@ -14,7 +14,7 @@
 <div class="row mt-4">
 	<div class="col-md-4">
 		<div class="card">
-			<div class="card-header">Edit Selected User</div>
+			<div class="card-header">Transaction History</div>
 			<div class="card-body">
 				<form method="POST" action="{{ route('all_transaction.edit_validation') }}">
 					@csrf
@@ -93,7 +93,7 @@
 
 	<div class="col-md-4 mx-auto" style="margin-top: -800px">
 		<div class="card">
-			<div class="card-header">Edit Selected User</div>
+			<div class="card-header">Add New Transaction</div>
 			<div class="card-body">
 				<form method="POST" action="{{ route('all_transaction.edit_validation2') }}">
 					@csrf

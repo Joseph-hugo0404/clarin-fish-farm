@@ -10,6 +10,11 @@ use Session;
 
 class CustomAuthController extends Controller
 {
+    public function construct()
+    {
+        $this->middleware('auth')->only('logout');
+    }
+
     public function index()
     {
         return view('auth.login');
@@ -26,7 +31,7 @@ class CustomAuthController extends Controller
 
         if(Auth::attempt($credential))
         {
-            return redirect()->intended('dashboard')->withSuccess('Login');
+            return redirect()->intended('dashboard')->withSuccess('Login Successfully');
         }
 
         return redirect('login')->with('error', 'Login Details are not valid');
@@ -79,7 +84,7 @@ class CustomAuthController extends Controller
     public function logout()
     {
         Session::flush();
-        Auth::logout();
-        return redirect('login');
+        auth()->logout();
+        return redirect('/')->with('Info','You have been logged out.');
     }
 }

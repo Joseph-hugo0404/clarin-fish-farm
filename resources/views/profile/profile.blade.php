@@ -1,6 +1,6 @@
 @extends('page')
 @section('content')
-<h1>User Profile</h1>
+<h1>User Profile [{{$data->name}}]</h1>
 <hr>
 <div class="row mt-4">
 	@if(session()->has('success'))
@@ -11,7 +11,7 @@
 	@endif
 	<div class="col-md-4 mx-auto">
 		<div class="card">
-			<div class="card-header">Edit User</div>
+			<div class="card-header bg-green">Edit User</div>
 			<div class="card-body">
 				<form method="post" action="{{ route('profile.edit_validation') }}">
 					@csrf
@@ -34,7 +34,7 @@
 		        		<input type="password" name="password" class="form-control" placeholder="New Password" />
 		        	</div>
 		        	<div class="form-group mb-3">
-		        		<input type="submit" class="btn btn-primary btn-center bfar-bg" value="Save Changes" />
+		        		<input type="submit" class="btn btn-primary btn-center float-end" value="Save Changes" />
 		        	</div>
 				</form>
 			</div>

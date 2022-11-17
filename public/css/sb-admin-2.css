@@ -2358,7 +2358,7 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   /* background-color: #4e73df; */
-  background: linear-gradient(to bottom right, #4e73df, #43af94);
+  background: linear-gradient(to bottom right, #4873f5, #46d6b2);
   border-color: #4e73df;
 }
 

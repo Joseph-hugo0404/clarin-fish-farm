@@ -21,7 +21,7 @@
 				<div class="col col-md-6">List of Transaction</div>
 				<div class="col col-md-6">
 					<a href="{{ route('all_transaction.add') }}" class="btn btn-success btn-sm float-end"><i class="fa fa-plus" aria-hidden="true"></i> Add New Transaction</a>
-					<a href="{{ route('all_transaction.print') }}" class="btnprn btn btn-primary btn-sm float-end " style="margin-right: 2%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
+					<a href="{{ route('all_transaction.print') }}" class="btnprn btn btn-green btn-sm float-end " style="margin-right: 2%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
 					
 				</div>
 			</div>

@@ -21,7 +21,8 @@
     <link href="{{asset('/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
 
 
-    <script src="{{asset('js/jquery.js')}}"></script>
+    <script src="{{asset('js/jquery.js')}}"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('js/dataTables.bootstrap5.min.js')}}"></script>
     <script src="{{asset('js/jquery.printPage.js')}}"></script>
@@ -29,6 +30,7 @@
     <link href="{{asset('css/styles.css')}}" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+   
 
     @include('pages.sidebar')
     <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -46,6 +48,7 @@
 
                 <!--</div>!-->
             </main>
+
     @endguest
     <script src="{{ asset('js/bootstrap.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
@@ -53,5 +56,6 @@
         
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+
 </body>
 </html>

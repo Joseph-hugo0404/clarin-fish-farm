@@ -39,7 +39,7 @@ class AllTransactionController extends Controller
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="/all_transaction/edit/'.$row->id.'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
+                        return '<a href="/all_transaction/edit/'.$row->id.'" class="btn btn-yellow btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -190,9 +190,9 @@ class AllTransactionController extends Controller
 
     }
 
-    function delete($id)
+    function delete(Request $request)
     {
-        $data = AllTransaction::findOrFail($id);
+        $data = AllTransaction::findOrFail($request->delete_id);
 
         $data->delete();
 

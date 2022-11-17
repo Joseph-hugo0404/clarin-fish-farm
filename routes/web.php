@@ -10,6 +10,7 @@ use App\Http\Controllers\GraphController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CustomerContoller;
+use App\Http\Controllers\FullCalenderController;
 
 
 /*
@@ -32,14 +33,14 @@ Route::get('/', function () {
 
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register');
     Route::post('custom-registration', [CustomAuthController::class, 'custom_registration'])->name('register.custom');
-    Route::get('login', [CustomAuthController::class, 'index'])->name('login');
+    Route::get('login', [CustomAuthController::class, 'index'])->name('login')->middleware('checkuser');
     Route::post('custom-login', [CustomAuthController::class, 'custom_login'])->name('login.custom');
 
 Route::group(['middleware'=>'auth'], function() {
     Route::get('/profile', [UserController::class,'profile']);
     Route::post('/users/profile', [UserController::class,'update']);
     Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
-    Route::get('/logout', [CustomAuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [CustomAuthController::class, 'logout'])->name('logout');
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('profile/edit_validation', [ProfileController::class, 'edit_validation'])->name('profile.edit_validation');
     Route::get('all_transaction', [AllTransactionController::class, 'index'])->name('all_transaction');
@@ -71,4 +72,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::resource('customer',CustomerContoller::class);
+
+    Route::get('dashboard', [FullCalenderController::class, 'index']);
+    Route::post('calendar-crud-ajax', [FullCalenderController::class, 'calendarEvents']);
 });

@@ -1,9 +1,9 @@
 @extends('dashboard')
 @section('content')
 
- <section class="container mt-5 mb-5">
+ <section class="container mt-5 mb-5" style="width: 70%">
 	<!-- Jumbotron -->
-	<div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 87%)">
+	<div class="px-4 py-5 px-md-5 text-center text-mb-start" style="background-color: hsl(0, 0%, 76%)">
 	  <div class="container">
 		<div class="row gx-lg-5 align-items-center">
 		  <div class="col-lg-6 mb-5 mb-lg-0">
@@ -19,8 +19,11 @@
 				<form method="post" action="{{ route('login.custom') }}">
 										
 				  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-center">
-						<p class="lead fw-bold mb-5 ">Clarin Freshwater Fish Farm System</p>
+						<p class="lead fw-bold mb-5 ">Clarin Freshwater br Fish Farm System</p>
+						
 				  </div>
+
+				  @include('messages')
 
 				  @if (session()->has('error'))
 
@@ -68,5 +71,11 @@
 	</div>
 	<!-- Jumbotron -->
 </section>
+<style>
+	@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-VariableFont_wght.ttf');
+}
+</style>
 @endsection
 

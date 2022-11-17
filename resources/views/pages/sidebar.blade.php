@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="margin-top: -50px" id="accordionSidebar">
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/dashboard')}}">
         <div class="sidebar-brand-icon">
-            <img src="{{asset('images/bfar.png')}}" style="width:60px;" alt="BFAR Logo">
+            <img src="{{asset('images/bfar2.png')}}" style="width:60px;" alt="BFAR Logo">
         </div>
         <div class="sidebar-brand-text mx-3">BFAR&#xB7;FARM</div>
     </a>
@@ -31,4 +31,9 @@
     <li class="nav-item">
         <a class="nav-link {{ Request::segment(1) == 'customer' ? 'active' : '' }}" aria-current="page" href="/customer"><i class="fa-solid fas fa-users"></i> Customers</a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link {{ Request::segment(1) == 'event/calendar' ? 'active' : '' }}" aria-current="page" href="/calendar-event"><i class="fa-solid fas fa-users"></i> Calendar</a>
+    </li>
+   
 </ul>
