@@ -588,6 +588,12 @@ pre code {
   margin-right: -0.75rem;
   margin-left: -0.75rem;
 }
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -45rem;
+  margin-left: -0.75rem;
+}
 
 .no-gutters {
   margin-right: 0;
@@ -9799,7 +9805,7 @@ a:focus {
 }
 
 #wrapper #content-wrapper {
-  background-color: #f8f9fc;
+  background: linear-gradient(to bottom right, #ffffff, #ecf5f7);
   width: 100%;
   overflow-x: hidden;
 }
@@ -11269,7 +11275,7 @@ form.user .btn-user {
 }
 
 footer.sticky-footer {
-  padding: 2rem 0;
+  padding: 0.9rem 0;
   flex-shrink: 0;
 }
 

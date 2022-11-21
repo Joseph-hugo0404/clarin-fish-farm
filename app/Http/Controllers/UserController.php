@@ -11,37 +11,9 @@ class UserController extends Controller
 
     public function profile() {
         $user = auth()->user();
-        return view('profile',[
+        return view('profile.profile',[
             'user' => $user
         ]);
-    }
-
-    public function update(Request $request) {
-        $user = auth()->user();
-
-        $request->validate([
-            'name' => 'string|required',
-            'email' => 'string|required',
-            'password' => 'string|required',
-        ]);
-
-        //check user for duplicates
-        if($request->user != $user->user) {
-            $userWithUsername = User::where('user', $request->user)
-                    ->where('id','<>', $user->id)->first();
-
-            if($userWithUsername) {
-                return back()->withInput()->with('Error','The user name is already taken by someone else.');
-            }
-        }
-
-        $user->update($request->only('name','email','password'));
-
-        $picField = $request['pic-field'];
-
-        $this->savePic($picField, $user);
-
-        return redirect('/profile')->with('Info','Your user profile has been updated.');
     }
 
     public function changePasswordForm() {
@@ -70,26 +42,5 @@ class UserController extends Controller
         return redirect('/users/profile')->with('Info','Your password has been changed.');
     }
 
-    private function savePic($field, $user) {
-        $folderPath = 'images/profile-pics/';
-
-        if($field) {
-            $image_parts = explode(";base64,", $field);
-            $image_type_aux = explode("image/", $image_parts[0]);
-            $image_type = $image_type_aux[1];
-            $image_base64 = base64_decode($image_parts[1]);
-            $file = $folderPath . $user->id . '.jpg';
-
-            try {
-                $data = \imagecreatefromstring($image_base64);
-                if(!$data) {
-                    die("Fatal Error!");
-                }
-
-                imagejpeg($data, $file);
-            }catch(\Exception $ex) {
-                die($ex->getMessage());
-            }
-        }
-    }
+   
 }

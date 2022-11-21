@@ -8,6 +8,7 @@
   src: url('../fonts/Nunito-VariableFont_wght.ttf');
 }
 
+
 .fa {
   font-family: var(--fa-style-family, "Font Awesome 6 Free");
   font-weight: var(--fa-style, 900);
@@ -8229,14 +8230,6 @@ readers do not read off random characters that represent icons */
   --fa-style-family-classic: "Font Awesome 6 Free";
   --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
 }
-
-@font-face {
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?639d2000c1ece92eaec8800924b6a0dd) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?abf801b7acb6705a15adbe198ec6b118) format("truetype");
-}
 .far,
 .fa-regular {
   font-weight: 400;
@@ -8252,13 +8245,6 @@ readers do not read off random characters that represent icons */
   --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
 }
 
-@font-face {
-  font-family: "Font Awesome 6 Free";
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?66104b766c3d0462b3c5a310ce92e1aa) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?b48ad290d0335879a92bb6a7e8e08976) format("truetype");
-}
 .fas,
 .fa-solid {
   font-weight: 900;

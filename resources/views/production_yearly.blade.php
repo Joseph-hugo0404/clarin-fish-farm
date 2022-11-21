@@ -1,4 +1,4 @@
-@extends('page')
+@extends('main')
 @section('content') 
 
 <h2 class="mt-3">Yearly Production Management</h2>

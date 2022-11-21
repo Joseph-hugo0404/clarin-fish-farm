@@ -1,4 +1,4 @@
-@extends('page')
+@extends('main')
 @section('title','Update Customer')
 @section('content')
 <nav aria-label="breadcrumb">

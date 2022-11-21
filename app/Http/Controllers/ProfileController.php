@@ -14,41 +14,69 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
+    public function profile() {
+        $user = auth()->user();
+        return view('profile.profile',[
+            'user' => $user
+        ]);
+    }
+
     function index()
     {
         $data = User::findOrFail(Auth::user()->id);
         return view('profile.profile', compact('data'));
     }
 
-    function edit_validation(Request $request)
-    {
+    public function update(Request $request) {
+        $user = auth()->user();
+
         $request->validate([
-            'email'     =>  'required|email',
-            'name'      =>  'required'
+            'name' => 'string|required',
+            'email' => 'string|required',
+
+            'password' => 'string|required',
         ]);
 
-        $data = $request->all();
+        //check user for duplicates
+        if($request->user != $user->user) {
+            $userWithUsername = User::where('user', $request->user)
+                    ->where('id','<>', $user->id)->first();
 
-        if(!empty($data['password']))
-        {
-            $form_data = array(
-                'name'      =>  $data['name'],
-                'email'     =>  $data['email'],
-                'password'  =>  Hash::make($data['password'])
-            );
-        }
-        else
-        {
-            $form_data = array(
-                'name'      =>  $data['name'],
-                'email'     =>  $data['email']
-            );
+            if($userWithUsername) {
+                return back()->withInput()->with('Error','The user name is already taken by someone else.');
+            }
         }
 
-        User::whereId(Auth::user()->id)->update($form_data);
+        $user->update($request->only('name','email','password'));
 
-        return redirect('profile')->with('success', 'Profile Data Updated');
-        
+        $picField = $request['pic-field'];
+
+        $this->savePic($picField, $user);
+
+        return redirect('profile')->with('Info','Your user profile has been updated.');
+    }
+
+    private function savePic($field, $user) {
+        $folderPath = 'images/profile-pics';
+
+        if($field) {
+            $image_parts = explode(";base64,", $field);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            $image_type = $image_type_aux[1];
+            $image_base64 = base64_decode($image_parts[1]);
+            $file = $folderPath . $user->id . '.jpg';
+
+            try {
+                $data = \imagecreatefromstring($image_base64);
+                if(!$data) {
+                    die("Fatal Error!");
+                }
+
+                imagejpeg($data, $file);
+            }catch(\Exception $ex) {
+                die($ex->getMessage());
+            }
+        }
     }
 
 }

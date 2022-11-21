@@ -1,4 +1,4 @@
-@extends('page')
+@extends('main')
 
 @section('content')
 <h2 class="mt-3">Transaction Management</h2>
@@ -17,11 +17,11 @@
 	@endif
 	<div class="card">
 		<div class="card-header">
-			<div class="row">
+			<div class="row2">
 				<div class="col col-md-6">List of Transaction</div>
-				<div class="col col-md-6">
-					<a href="{{ route('all_transaction.add') }}" class="btn btn-success btn-sm float-end"><i class="fa fa-plus" aria-hidden="true"></i> Add New Transaction</a>
-					<a href="{{ route('all_transaction.print') }}" class="btnprn btn btn-green btn-sm float-end " style="margin-right: 2%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
+				<div class="col col-md-6" style="margin-right: -100%">
+					<a href="{{ route('all_transaction.add') }}" class="btn btn-success btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Add New Transaction</a>
+					<a href="{{ route('all_transaction.print') }}" class="btnprn btn bg-blue btn-sm " style="margin-right: 2%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
 					
 				</div>
 			</div>
@@ -56,11 +56,10 @@
 
 <script>
 $(function(){
-
 	var table = $('#all_transaction_table').DataTable({
 		processing:true,
 		serverSide:true,
-		ajax:"{{ route('all_transaction.fetchall') }}",
+		ajax:"{{ route('all_transaction.fetch_all') }}",
 		columns:[
 			{
 				data:'name',
@@ -102,18 +101,13 @@ $(function(){
 			}
 		]
 	});
-
 	$(document).on('click', '.delete', function(){
-
 		var id = $(this).data('id');
-
 		if(confirm("Are you sure you want to remove it?"))
 		{
 			window.location.href = "/all_transaction/delete/" + id;
 		}
-
 	});
-
 })
 </script>
 	<script type="text/javascript">

@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('main2')
 @section('content')
 
 <section class="container mt-5 mb-5">
@@ -23,12 +23,6 @@
 						<p class="lead fw-bold mb-5 me-">REGISTER NEW ADMIN</p>
 				  </div>
 
-				     @if (session()->has('error'))
-						<div class="alert alert-danger">
-							{{ session()->get('error') }}
-						</div>
-
-					@endif
                     @if(session()->has('success'))
                         <div class="alert alert-success">
                             {{ session()->get('success') }}

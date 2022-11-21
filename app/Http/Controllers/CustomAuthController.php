@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Price;
+use App\Models\AllTransaction;
 use Illuminate\Support\Facades\Auth;
 use Hash;
 use Session;
@@ -66,7 +68,7 @@ class CustomAuthController extends Controller
     {
         if(Auth::check())
         {
-            return view('main');
+            return view('pages.dashboard');
         }
 
         return redirect('login');
@@ -85,6 +87,31 @@ class CustomAuthController extends Controller
     {
         Session::flush();
         auth()->logout();
-        return redirect('/')->with('Info','You have been logged out.');
+        return redirect('login')->with('Info','You have been logged out.');
+    }
+
+    public function statbox()
+    {
+       
+        $total_transaction = AllTransaction::count();
+        $total_admin = User::count();
+        $total_tilapia = Price::sum('tilapia_stock');
+        $total_ornamental = Price::sum('ornamental_stock');
+        $total_carp = Price::sum('carp_stock');
+        $total_beetle_fish = Price::sum('beetle_fish_stock');
+        $total_cat_fish= Price::sum('cat_fish_stock');
+
+        $total_tilapia_sold = AllTransaction::sum('tilapia');
+        $total_ornamental_sold = AllTransaction::sum('ornamental');
+        $total_carp_sold = AllTransaction::sum('carp');
+        $total_beetle_fish_sold = AllTransaction::sum('beetle_fish');
+        $total_cat_fish_sold = AllTransaction::sum('cat_fish');
+
+        
+        $total_stocks = $total_tilapia+$total_ornamental+$total_carp+$total_beetle_fish+$total_cat_fish;
+        $total_fish_sold = $total_tilapia_sold+$total_ornamental_sold+$total_carp_sold+$total_beetle_fish_sold+$total_cat_fish_sold;
+
+        return view('pages.dashboard', compact('total_transaction','total_admin','total_stocks','total_fish_sold'));
+
     }
 }

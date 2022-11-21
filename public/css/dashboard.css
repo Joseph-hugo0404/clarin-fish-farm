@@ -3,11 +3,6 @@
   src: url('../fonts/Nunito-VariableFont_wght.ttf');
 }
 
-body {
-  font-size: .875rem;
-    background: linear-gradient(to bottom, rgb(245, 245, 245), rgb(242, 243, 243));
-}
-
 .feather {
   width: 16px;
   height: 16px;

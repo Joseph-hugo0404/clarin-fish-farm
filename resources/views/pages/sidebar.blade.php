@@ -1,39 +1,57 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="margin-top: -50px" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/dashboard')}}">
         <div class="sidebar-brand-icon">
-            <img src="{{asset('images/bfar2.png')}}" style="width:60px;" alt="BFAR Logo">
+            <img src="{{asset('images/bfar2.png')}}" style="width:60px;" alt="MDC Logo">
         </div>
-        <div class="sidebar-brand-text mx-3">BFAR&#xB7;FARM</div>
+        <div class="sidebar-brand-text mx-3">CLARIN&#xB7;FARM</div>
     </a>
-    
-    <hr class="sidebar-divider bg-white">
 
-    <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'dashboard' ? 'active' : '' }}" aria-current="page" href="/dashboard"><i class="fas fa-fw fa-tachometer-alt"></i> Dashboard</a>
-    </li>
-    <hr class="sidebar-divider my-0 bg-white">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
+    <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production"><i class="fas fa-chart-area"></i> Production</a>
-    </li>
-    @if(Auth::user()->type == 'Admin')
-    <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'all_transaction' ? 'active' : '' }}" aria-current="page" href="/all_transaction"><i class="fas fa-file-invoice-dollar"></i> Transaction</a>
-    </li>@endif
-    
-    <!-- Department -->
-    {{-- <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'depart' ? 'active' : '' }}" aria-current="page" href="/depart"><i class="fa-solid fas fa-th"></i> Department</a>
-    </li> --}}
-    <!-- End Department -->
-    <!-- Employee -->
-
-    <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'customer' ? 'active' : '' }}" aria-current="page" href="/customer"><i class="fa-solid fas fa-users"></i> Customers</a>
+        <a class="nav-link" href="{{url('/dashboard')}}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link {{ Request::segment(1) == 'event/calendar' ? 'active' : '' }}" aria-current="page" href="/calendar-event"><i class="fa-solid fas fa-users"></i> Calendar</a>
-    </li>
-   
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            
+        </div>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/all_transaction')}}">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Transaction</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/production')}}">
+                <i class="fas fa-chart-area"></i>
+                <span>Production</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/customer')}}">
+                <i class="fa-solid fa-list"></i>
+                <span>Customers</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/price')}}">
+                <i class="fas fa-th"></i>
+                <span>List of Stock</span></a>
+        </li>
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline ">
+        <button class="rounded-circle border-0" id="sidebarToggle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        </button>
+    </div>
 </ul>

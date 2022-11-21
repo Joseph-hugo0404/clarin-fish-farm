@@ -10,7 +10,8 @@ use App\Http\Controllers\GraphController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CustomerContoller;
-use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\CalenderController;
+use App\Http\Controllers\PriceController;
 
 
 /*
@@ -33,25 +34,30 @@ Route::get('/', function () {
 
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register');
     Route::post('custom-registration', [CustomAuthController::class, 'custom_registration'])->name('register.custom');
-    Route::get('login', [CustomAuthController::class, 'index'])->name('login')->middleware('checkuser');
+    Route::get('login', [CustomAuthController::class, 'index'])->name('login');
     Route::post('custom-login', [CustomAuthController::class, 'custom_login'])->name('login.custom');
 
 Route::group(['middleware'=>'auth'], function() {
-    Route::get('/profile', [UserController::class,'profile']);
+    Route::get('/dashboard', [CustomAuthController::class, 'dashboard']);
+    Route::get('/dashboard', [CustomAuthController::class, 'statbox']);
+    Route::get('/calendar-event', [CalenderController::class, 'index']);
+
+    Route::post('/calendar-crud-ajax', [CalenderController::class, 'calendarEvents']);  
+    Route::get('/user/profile', [UserController::class,'profile']);
     Route::post('/users/profile', [UserController::class,'update']);
-    Route::get('/dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
     Route::post('/logout', [CustomAuthController::class, 'logout'])->name('logout');
-    Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::post('profile/edit_validation', [ProfileController::class, 'edit_validation'])->name('profile.edit_validation');
     Route::get('all_transaction', [AllTransactionController::class, 'index'])->name('all_transaction');
-    Route::get('all_transaction/fetchall', [AllTransactionController::class, 'fetch_all'])->name('all_transaction.fetchall');
+    Route::get('all_transaction/fetchall', [AllTransactionController::class, 'fetch_all'])->name('all_transaction.fetch_all');
     Route::get('all_transaction/add', [AllTransactionController::class, 'add'])->name('all_transaction.add');
     Route::post('all_transaction/add_validation', [AllTransactionController::class, 'add_validation'])->name('all_transaction.add_validation');
     Route::get('all_transaction/edit/{id}', [AllTransactionController::class, 'edit'])->name('edit');
     Route::post('all_transaction/edit_validation', [AllTransactionController::class, 'edit_validation'])->name('all_transaction.edit_validation');
     Route::post('all_transaction/edit_validation2', [AllTransactionController::class, 'edit_validation2'])->name('all_transaction.edit_validation2');
     Route::get('all_transaction/show/{id}', [AllTransactionController::class, 'show'])->name('show');
-    Route::get('all_transaction/delete/{id}', [AllTransactionController::class, 'delete'])->name('delete');
+    Route::get('all_transaction/delete/{id}', [AllTransactionController::class, 'delete'])->name('all_transaction.delete');
     Route::get('all_transaction/printpreview', [AllTransactionController::class, 'printpreview'])->name('all_transaction.print');
     Route::get('production', [GraphController::class, 'monthly'])->name('production');
     Route::get('production_yearly', [GraphController::class, 'yearly'])->name('production_yearly');
@@ -73,6 +79,21 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::resource('customer',CustomerContoller::class);
 
-    Route::get('dashboard', [FullCalenderController::class, 'index']);
-    Route::post('calendar-crud-ajax', [FullCalenderController::class, 'calendarEvents']);
+    Route::get('/price', [PriceController::class, 'index'])->name('price');
+
+    Route::get('price/fetchall', [PriceController::class, 'fetch_all'])->name('price.fetch_all');
+
+    Route::get('price/add', [PriceController::class, 'add'])->name('price.add');
+
+    Route::post('price/add_stock', [PriceController::class, 'add_stock_fish'])->name('price.add_stock_fish');
+
+    Route::get('/price/edit/{id}', [PriceController::class, 'edit2'])->name('edit2');
+
+    Route::post('/price/edit_validation', [PriceController::class, 'edit_validation'])->name('price.edit_validation');
+
+    Route::get('price/delete/{id}', [PriceController::class, 'delete'])->name('price.delete');
+
+    Route::get('view_admin', [AdminController::class, 'index'])->name('view_admin');
+
+    Route::get('view_admin/fetchall', [AdminController::class, 'fetch_all'])->name('view_admin.fetchall');
 });

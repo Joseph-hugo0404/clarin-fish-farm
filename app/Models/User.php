@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'photo',
         'password',
         'type'
     ];
@@ -44,7 +45,7 @@ class User extends Authenticatable
     ];
 
     public function getProfilePicAttribute() {
-        $path = "images/profile-pics/$this->id.jpg";
+        $path = "img/profile-pics/$this->id.jpg";
         $file = public_path($path);
         if(file_exists($file)) {
             return asset($path);
