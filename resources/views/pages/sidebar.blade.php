@@ -25,16 +25,16 @@
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
+        <li class="nav-item">
+                <a class="nav-link" href="{{url('/stock')}}">
+                    <i class="fas fa-th"></i>
+                        <span>List of Stock</span></a>
+             </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{url('/all_transaction')}}">
                 <i class="fas fa-file-invoice-dollar"></i>
                 <span>Transaction</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="{{url('/production')}}">
-                <i class="fas fa-chart-area"></i>
-                <span>Production</span></a>
         </li>
 
         <li class="nav-item">
@@ -44,11 +44,11 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/price')}}">
-                <i class="fas fa-th"></i>
-                <span>List of Stock</span></a>
+            <a class="nav-link" href="{{url('/production')}}">
+                <i class="fas fa-chart-area"></i>
+                <span>Production</span></a>
         </li>
-
+        
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline ">
         <button class="rounded-circle border-0" id="sidebarToggle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">

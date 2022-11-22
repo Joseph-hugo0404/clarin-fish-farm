@@ -11,7 +11,7 @@ use App\Http\Controllers\PrintController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CustomerContoller;
 use App\Http\Controllers\CalenderController;
-use App\Http\Controllers\PriceController;
+use App\Http\Controllers\StockController;
 
 
 /*
@@ -55,7 +55,6 @@ Route::group(['middleware'=>'auth'], function() {
     Route::post('all_transaction/add_validation', [AllTransactionController::class, 'add_validation'])->name('all_transaction.add_validation');
     Route::get('all_transaction/edit/{id}', [AllTransactionController::class, 'edit'])->name('edit');
     Route::post('all_transaction/edit_validation', [AllTransactionController::class, 'edit_validation'])->name('all_transaction.edit_validation');
-    Route::post('all_transaction/edit_validation2', [AllTransactionController::class, 'edit_validation2'])->name('all_transaction.edit_validation2');
     Route::get('all_transaction/show/{id}', [AllTransactionController::class, 'show'])->name('show');
     Route::get('all_transaction/delete/{id}', [AllTransactionController::class, 'delete'])->name('all_transaction.delete');
     Route::get('all_transaction/printpreview', [AllTransactionController::class, 'printpreview'])->name('all_transaction.print');
@@ -73,25 +72,25 @@ Route::group(['middleware'=>'auth'], function() {
     Route::patch('/user-mgt/users/{user}', [UserManagementController::class, 'changePassword']);
     Route::post('/user-mgt/toggle-activation/{user}', [UserManagementController::class, 'toggleUserActivation']);
 
-    // customer Resource
+    // customer Resource    
     Route::get('customer/edit/{id}',[CustomerContoller::class,'edit']);
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::resource('customer',CustomerContoller::class);
 
-    Route::get('/price', [PriceController::class, 'index'])->name('price');
+    Route::get('/stock', [StockController::class, 'index'])->name('stock');
 
-    Route::get('price/fetchall', [PriceController::class, 'fetch_all'])->name('price.fetch_all');
+    Route::get('stock/fetchall', [StockController::class, 'fetch_all'])->name('stock.fetch_all');
 
-    Route::get('price/add', [PriceController::class, 'add'])->name('price.add');
+    Route::get('stock/add', [StockController::class, 'add'])->name('stock.add');
 
-    Route::post('price/add_stock', [PriceController::class, 'add_stock_fish'])->name('price.add_stock_fish');
+    Route::post('stock/add_stock', [StockController::class, 'add_stock_fish'])->name('stock.add_stock_fish');
 
-    Route::get('/price/edit/{id}', [PriceController::class, 'edit2'])->name('edit2');
+    Route::get('/stock/edit/{id}', [StockController::class, 'edit2'])->name('edit2');
 
-    Route::post('/price/edit_validation', [PriceController::class, 'edit_validation'])->name('price.edit_validation');
+    Route::post('/stock/edit_validation', [StockController::class, 'edit_validation'])->name('stock.edit_validation');
 
-    Route::get('price/delete/{id}', [PriceController::class, 'delete'])->name('price.delete');
+    Route::get('stock/delete/{id}', [StockController::class, 'delete'])->name('stock.delete');
 
     Route::get('view_admin', [AdminController::class, 'index'])->name('view_admin');
 

@@ -1,11 +1,11 @@
 @extends('main')
 
 @section('content')
-<h2 class="mt-3">Price Management</h2>
+<h2 class="mt-3">Stock Management</h2>
 <nav aria-label="breadcrumb">
   	<ol class="breadcrumb">
-    	<li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
-    	<li class="breadcrumb-item active">Price List</li>	
+    	<li class="breadcrumb-item"><a href="/stock">Stock</a></li>
+    	<li class="breadcrumb-item active"></li>	
   	</ol>
 </nav>
 
@@ -19,24 +19,25 @@
 		<div class="card-header">
 			<div class="row2">
 				<div class="col col-md-6">
-					<a href="{{ route('price.add') }}" class="btn btn-success btn-sm float-end" data-toggle="tooltip" data-placement="top" title="Add Stock"><i class="fa fa-plus" aria-hidden="true"></i></a>
+					<a href="{{ route('stock.add') }}" class="btn btn-success btn-sm float-end" data-toggle="tooltip" data-placement="top" title="Add Stock"><i class="fa fa-plus" aria-hidden="true"></i></a>
 					
 				</div>
 			</div>
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered table-hover" id="price_table">
+				<table class="table table-bordered table-hover" id="stock_table">
 					<thead class="table-primary">
-						<tr>
-							<th>Tilapia Quantity</th>
-							<th>Ornamental Quantity</th>
+						<tr> 
+							<th>Tilapia Stocks</th>
+							<th>Ornamental Stocks</th>
 							
-							<th>Carp Quantity</th>
+							<th>Carp Stocks</th>
 
-							<th>Beetle Fish< Quantity</th>
+							<th>Beetle Fish Stocks</th>
 
-							<th>Cat Fish Quantity</th>
+							<th>Cat Fish Stocks</th>
+							<th>Date Added</th>
 
 							<th>Action</th>
 						</tr>
@@ -49,11 +50,10 @@
 </div>
 <script>
 $(function(){
-
-	var table = $('#price_table').DataTable({
+	var table = $('#stock_table').DataTable({
 		processing:true,
 		serverSide:true,
-		ajax:"{{ route('price.fetch_all') }}",
+		ajax:"{{ route('stock.fetch_all') }}",
 		columns:[
 			
 			{
@@ -81,6 +81,10 @@ $(function(){
 				name:'cat_fish_stock'
 			},
 			{
+				data:'date_added',
+				name:'date_added'
+			},
+			{
 				data:'action',
 				name:'action',
 				orderable:false
@@ -94,7 +98,7 @@ $(function(){
 
 		if(confirm("Are you sure you want to remove it?"))
 		{
-			window.location.href = "price/delete/" + id;
+			window.location.href = "stock/delete/" + id;
 		}
 
 		});

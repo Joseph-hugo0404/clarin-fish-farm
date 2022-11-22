@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Price;
+use App\Models\Stock;
 use App\Models\AllTransaction;
 use Illuminate\Support\Facades\Auth;
 use Hash;
@@ -95,11 +95,11 @@ class CustomAuthController extends Controller
        
         $total_transaction = AllTransaction::count();
         $total_admin = User::count();
-        $total_tilapia = Price::sum('tilapia_stock');
-        $total_ornamental = Price::sum('ornamental_stock');
-        $total_carp = Price::sum('carp_stock');
-        $total_beetle_fish = Price::sum('beetle_fish_stock');
-        $total_cat_fish= Price::sum('cat_fish_stock');
+        $total_tilapia = Stock::sum('tilapia_stock');
+        $total_ornamental = Stock::sum('ornamental_stock');
+        $total_carp = Stock::sum('carp_stock');
+        $total_beetle_fish = Stock::sum('beetle_fish_stock');
+        $total_cat_fish= Stock::sum('cat_fish_stock');
 
         $total_tilapia_sold = AllTransaction::sum('tilapia');
         $total_ornamental_sold = AllTransaction::sum('ornamental');

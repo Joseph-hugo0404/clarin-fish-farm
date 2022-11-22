@@ -159,7 +159,7 @@
                         {{auth()->user()->name ?? 'name'}}
                     </span>
             <img class="img-profile rounded-circle"
-                    src="{{auth()->user()->profile_pic ?? 'profile_pic'}}">
+                    src={{auth()->user()->profile_pic ?? 'profile_pic'}}>
             </a>
             <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

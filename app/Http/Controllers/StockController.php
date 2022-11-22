@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Price;
+use App\Models\Stock;
 use Carbon\Carbon;
 use DataTables;
 
 use Hash;
 
-use DB;
+use DB; 
 
 use Illuminate\Support\Facades\Auth;
 
-class PriceController extends Controller
+class StockController extends Controller
 {
     public function construct()
     {
@@ -22,19 +22,19 @@ class PriceController extends Controller
 
     public function index()
     {
-        return view('price');
+        return view('stock.stock');
     }
 
     function fetch_all(Request $request)
     {
         if($request->ajax())
         {
-            $data = Price::all();
+            $data = Stock::all();
 
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="/price/edit/'.$row->id.'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
+                        return '<a href="/stock/edit/'.$row->id.'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -44,7 +44,7 @@ class PriceController extends Controller
 
     function add()
     {
-        return view('add_stock');
+        return view('stock.add_stock');
     }
 
     function add_stock_fish(Request $request)
@@ -54,31 +54,32 @@ class PriceController extends Controller
             'ornamental_stock'      =>  'required',
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
-            'cat_fish_stock'     =>  'required'
+            'cat_fish_stock'     =>  'required',
+            'date_added'      =>  'required',
  
         ]);
 
         $data = $request->all();
         
-        Price::create([
+        Stock::create([
 
                 'tilapia_stock'     =>  $data['tilapia_stock'],
                 'ornamental_stock'     =>  $data['ornamental_stock'],
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
-                'cat_fish_stock'     =>  $data['cat_fish_stock']
+                'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'  =>  $data['date_added'],
         ]);
 
-        return redirect('price')->with('success', 'Successfully Added');
-
+        return redirect('stock')->with('success', 'Successfully Added');
         }
 
 
     public function edit2($id)
     {
-        $data = Price::findOrFail($id);
+        $data = Stock::findOrFail($id);
 
-        return view('edit_price', compact('data'));
+        return view('stock.edit_stock', compact('data'));
     }
 
     function edit_validation(Request $request)
@@ -88,7 +89,8 @@ class PriceController extends Controller
             'ornamental_stock'      =>  'required',
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
-            'cat_fish_stock'     =>  'required'
+            'cat_fish_stock'     =>  'required',
+            'date_added'     =>  'required'
  
         ]);
 
@@ -101,7 +103,8 @@ class PriceController extends Controller
                 'ornamental_stock'     =>  $data['ornamental_stock'],
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
-                'cat_fish_stock'     =>  $data['cat_fish_stock']
+                'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'  =>  $data['date_added'],
             );
         }
         else
@@ -111,22 +114,23 @@ class PriceController extends Controller
                 'ornamental_stock'     =>  $data['ornamental_stock'],
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
-                'cat_fish_stock'     =>  $data['cat_fish_stock']
+                'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'  =>  $data['date_added'],
             );
         }
 
-        Price::whereId($data['hidden_id'])->update($form_data);
+        Stock::whereId($data['hidden_id'])->update($form_data);
 
-        return redirect('price')->with('success', 'Price Updated');
+        return redirect('stock')->with('success', 'stock Updated');
 
     }
 
     function delete($id)
     {
-        $data = Price::findOrFail($id);
+        $data =Stock::findOrFail($id);
 
         $data->delete();
 
-        return redirect('price')->with('success', 'Old Stock Delete');
+        return redirect('stock')->with('success', 'Old Stock Delete');
     }
 }

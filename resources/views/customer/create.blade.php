@@ -9,19 +9,11 @@
     </ol>
 </nav>
 
-<div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Add Customer
         <a href="{{url('customer')}}" class="float-end btn btn-sm btn-success">View All</a>
     </div>
-    <div class="card-body">
-
-        @if($errors->any())
-            @foreach($errors->all() as $error)
-                <p class="text-danger">{{$error}}</p>
-            @endforeach
-        @endif
 
         @if(Session::has('msg'))
         <p class="text-success">{{session('msg')}}</p>
@@ -63,12 +55,10 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" class="btn btn-primary" href="/customer" value="Submit" />
+                        <input type="submit" class="btn btn-primary" value="Submit" />
                     </td>
                 </tr>
             </table>
         </form>
-    </div>
-</div>
 
 @endsection

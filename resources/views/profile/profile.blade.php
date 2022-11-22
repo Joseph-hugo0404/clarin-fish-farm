@@ -28,7 +28,6 @@
 @endsection
 
 @section('content')
-@include('profile.profile-cropper')
 <h1>User Profile </h1>
 <hr>
 <div class="row mt-4">
@@ -72,8 +71,8 @@
             <div class="form-group mb-3">
                 <input type="password" name="password" class="form-control" placeholder="New Password" />
             </div>
-            <div class="d-flex justify-content-end">
-                <button class="btn btn-success" type="submit"><i class="fa fa-save"></i> Save Changes</button>
+            <div class="form-group mb-3 justify-content-end">
+                <button class="btn btn-success" type="submit">Save Changes</button>
             </div>
             </form>
     </div>

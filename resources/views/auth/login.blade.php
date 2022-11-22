@@ -43,9 +43,10 @@
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
                                     <div class="input-group mb-3">
-                                        <div class="input-group-text bg-info text-white"><i class="fa fa-user"></i></div>
+                                        <div class="input-group-text bg-info text-white"><i class="fa-solid fa-envelope"></i></div>
                                         <input type="text" name="email" class="form-control" placeholder="Enter Email" />
                                     </div>
+                                </div>
                 
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
@@ -53,6 +54,7 @@
                                         <div class="input-group-text bg-danger text-white"><i class="fa fa-lock"></i></div>
                                         <input type="password" name="password" class="form-control" placeholder="Enter Password" />
                                     </div>
+                                </div>
                 
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4">

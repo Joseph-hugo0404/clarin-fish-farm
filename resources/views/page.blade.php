@@ -32,6 +32,8 @@
         <script src="{{asset('js/scripts.js')}}"></script>
             
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+        <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+        
         @yield('heads')
         
 </head>

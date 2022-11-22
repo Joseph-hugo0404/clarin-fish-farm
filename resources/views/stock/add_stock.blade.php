@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h2 class="mt-3">Price Management</h2>
+<h2 class="mt-3">Stock Management</h2>
 <nav aria-label="breadcrumb">
   	<ol class="breadcrumb">
     	<li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
@@ -16,7 +16,7 @@
 		<div class="card">
 			<div class="card-header">Add New Transaction</div>
 			<div class="card-body">
-				<form method="POST" action="{{ route('price.add_stock_fish') }}">
+				<form method="POST" action="{{ route('stock.add_stock_fish') }}">
 					@csrf
 					<div class="form-group mb-3">
 		        		<label><b>Tilapia Fish Stock</b></label>
@@ -55,6 +55,14 @@
 		        		<input type="number" name="cat_fish_stock" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="cat_fish">
 		        		@if($errors->has('cat_fish_stock'))
 		        			<span class="text-danger">{{ $errors->first('cat_fish_stock') }}</span>
+		        		@endif
+		        	</div>
+
+					<div class="form-group mb-3">
+		        		<label><b>Date Added</b></label>
+		        		<input type="date" name="date_added" class="form-control" placeholder="date_added">
+		        		@if($errors->has('date_added'))
+		        			<span class="text-danger">{{ $errors->first('date_added') }}</span>
 		        		@endif
 		        	</div>
 

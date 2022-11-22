@@ -19,8 +19,8 @@
 
                 <form action="{{ route('register.custom') }}" method="POST">
 										
-				  <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-						<p class="lead fw-bold mb-5 me-">REGISTER NEW ADMIN</p>
+				  <div class="d-flex flex-row align-items-center text-center justify-content-center justify-content-lg-start">
+						<p class="lead fw-bold mb-5 me-">REGISTER NEW USER</p>
 				  </div>
 
                     @if(session()->has('success'))
@@ -31,32 +31,45 @@
 					@csrf
 				  <!-- Name input -->
 				  <div class="form-outline mb-4">
-					<input type="Text" name="name" class="form-control" placeholder="Name" />
-                        @if($errors->has('name'))
-                            <span class="text-danger">{{ $errors->first('name') }}</span>
-                        @endif
+					  <div class="input-group mb-3">
+						<div class="input-group-text bg-info text-white"><i class="fa-solid fa-envelope"></i></div>
+							<input type="Text" name="name" class="form-control" placeholder="Name" />
+								@if($errors->has('name'))
+									<span class="text-danger">{{ $errors->first('name') }}</span>
+								@endif
+				  		</div>
 				  </div>
   
 				  <!-- Email input -->
 				  <div class="form-outline mb-4">
-					<input type="text" name="email" class="form-control" placeholder="Email" />
+					<div class="input-group mb-3">
+					<div class="input-group-text bg-warning text-white"><i class="fa-solid fa-envelope"></i></div>
+						<input type="text" name="email" class="form-control" placeholder="Email" />
                             @if($errors->has('email'))
                             <span class="text-danger">{{ $errors->first('email') }}</span>
                         @endif                       
+					</div>
 				  </div>
 
                   <!-- Password input -->
 				  <div class="form-outline mb-4">
+					<div class="input-group mb-3">
+					<div class="input-group-text bg-danger text-white"><i class="fa-solid fa-user"></i></div>
 					<input type="password" name="password" class="form-control" placeholder="Password" />
                         @if ($errors->has('password'))
                             <span class="text-danger">{{ $errors->first('password') }}</span>
-                        @endif                     
+                        @endif                
+					</div>     
 				  </div>
   
 				  <!-- Submit button -->
 				  <button type="submit" class="btn btn-success btn-block mb-4 float-end">
 					Sign Up
 				  </button>
+				  <hr>
+				  <div class="text-center">
+					<a class="small" href="/login">Already have an Account</a>
+				</div>
 				</form>
 			  </div>
 			</div>

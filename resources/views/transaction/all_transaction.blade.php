@@ -15,17 +15,16 @@
 		{{ session()->get('success') }}
 	</div>
 	@endif
-	<div class="card">
-		<div class="card-header">
-			<div class="row2">
-				<div class="col col-md-6">List of Transaction</div>
-				<div class="col col-md-6" style="margin-right: -100%">
-					<a href="{{ route('all_transaction.add') }}" class="btn btn-success btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Add New Transaction</a>
-					<a href="{{ route('all_transaction.print') }}" class="btnprn btn bg-blue btn-sm " style="margin-right: 2%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
-					
-				</div>
+	<div class="">
+		<div class="row2">
+			<div class="col col-md-6">List of Transaction</div>
+			<div class="col col-md-6" style="margin-right: -100%">
+				<a href="{{ route('all_transaction.add') }}" class="btn btn-success btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Add New Transaction</a>
+				<a href="{{ route('all_transaction.print') }}" class="btnprn btn bg-blue btn-sm " style="margin-right: 1%"><i class="fa fa-print" aria-hidden="true"></i> Print</a>
+				
 			</div>
 		</div>
+	<div class="card">
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered" id="all_transaction_table">
@@ -50,6 +49,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 
 
