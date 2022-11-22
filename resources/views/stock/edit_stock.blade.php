@@ -63,6 +63,8 @@
 							<input type="hidden" name="hidden_id" value="{{ $data->id }}" />
 							<input type="submit" class="btn btn-primary" value="Edit" />
 						</div>
+					</div>
+					</div>
 					</form>
 				</div>
 			</div>

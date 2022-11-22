@@ -12,6 +12,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CustomerContoller;
 use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -65,16 +66,10 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('depart/{id}/delete',[DepartmentController::class,'destroy']);
     Route::resource('depart',DepartmentController::class);
 
-    
-    Route::get('/user-mgt/{name}', [UserManagementController::class, 'show']);
-    Route::get('/user-mgt', [UserManagementController::class, 'index']);
-    Route::put('/user-mgt/users/{user}', [UserManagementController::class, 'updateUser']);
-    Route::patch('/user-mgt/users/{user}', [UserManagementController::class, 'changePassword']);
-    Route::post('/user-mgt/toggle-activation/{user}', [UserManagementController::class, 'toggleUserActivation']);
+
 
     // customer Resource    
     Route::get('customer/edit/{id}',[CustomerContoller::class,'edit']);
-    Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::get('customer/{id}/delete',[CustomerContoller::class,'destroy']);
     Route::resource('customer',CustomerContoller::class);
 
@@ -92,7 +87,6 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::get('stock/delete/{id}', [StockController::class, 'delete'])->name('stock.delete');
 
-    Route::get('view_admin', [AdminController::class, 'index'])->name('view_admin');
-
-    Route::get('view_admin/fetchall', [AdminController::class, 'fetch_all'])->name('view_admin.fetchall');
+    Route::get('view_admin', [AdminController::class, 'index']);
+    Route::resource('view_admin',AdminController::class);
 });

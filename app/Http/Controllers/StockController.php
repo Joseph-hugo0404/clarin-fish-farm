@@ -134,3 +134,5 @@ class StockController extends Controller
         return redirect('stock')->with('success', 'Old Stock Delete');
     }
 }
+
+                   

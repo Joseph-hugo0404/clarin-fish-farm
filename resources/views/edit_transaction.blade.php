@@ -12,7 +12,7 @@
 </nav>
 
 <div class="row mt-4">
-	<div class="col-md-4">
+	<div class="col-md-4" style="margin-left:15%;float: none;">
 		<div class="card">
 			<div class="card-header">Transaction History</div>
 			<div class="card-body">
@@ -89,9 +89,9 @@
 			</div>
 		</div>
 	</div>
-</div>
 
-	<div class="col-md-4 mx-auto" style="margin-top: -800px">
+
+	<div class="col-md-4 mx-auto">
 		<div class="card">
 			<div class="card-header">Add New Transaction</div>
 			<div class="card-body">
@@ -169,5 +169,5 @@
 		</div>
 		
 	</div>
-
+</div>
 @endsection

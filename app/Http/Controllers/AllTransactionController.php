@@ -24,7 +24,7 @@ class AllTransactionController extends Controller
 
     public function index()
     {
-        return view('transaction.all_transaction');
+        return view('all_transaction');
     }
 
     function fetch_all(Request $request)
@@ -46,7 +46,7 @@ class AllTransactionController extends Controller
 
     function add()
     {
-        return view('transaction.add_new_transaction');
+        return view('add_new_transaction');
     }
 
     function add_validation(Request $request)
@@ -143,7 +143,7 @@ class AllTransactionController extends Controller
     {
         $data = AllTransaction::findOrFail($id);
 
-        return view('transaction.edit_transaction', compact('data'));
+        return view('edit_transaction', compact('data'));
     }
 
     function edit_validation(Request $request)
@@ -167,6 +167,8 @@ class AllTransactionController extends Controller
             'transaction_date'     =>  'required'
  
         ]);
+
+        $data = $request->all();
 
         if(!empty($data['name']))
         {
@@ -199,7 +201,7 @@ class AllTransactionController extends Controller
 
         AllTransaction::whereId($data['hidden_id'])->update($form_data);
 
-        return redirect('transaction.all_transaction')->with('success', 'Transaction Updated');
+        return redirect('all_transaction')->with('success', 'Transaction Updated');
 
     }
 
@@ -209,7 +211,7 @@ class AllTransactionController extends Controller
 
         $data->delete();
 
-        return redirect('transaction.all_transaction')->with('success', 'Transaction Data Removed');
+        return redirect('all_transaction')->with('success', 'Transaction Data Removed');
     }
     
     function printpreview()

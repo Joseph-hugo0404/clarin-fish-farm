@@ -64,5 +64,5 @@
         
     <div id='full_calendar_events'></div>
 </div>
-
 @endsection
+

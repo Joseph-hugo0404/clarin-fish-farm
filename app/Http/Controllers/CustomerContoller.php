@@ -14,7 +14,7 @@ class CustomerContoller extends Controller
      */
     public function index()
     {
-        $data=Customer::orderBy('id','desc')->get();
+        $data=Customer::orderBy('id','asc')->get();
         return view('customer.index',['data'=>$data]);
     }
 
@@ -58,7 +58,7 @@ class CustomerContoller extends Controller
         $data->status=$request->status;
         $data->save();
 
-        return redirect('customer/create')->with('msg','Data has been submitted');
+        return redirect('customer')->with('msg','Data has been submitted');
     }
 
     /**

@@ -28,6 +28,7 @@
 @endsection
 
 @section('content')
+@include('profile.profile-cropper')
 <h1>User Profile </h1>
 <hr>
 <div class="row mt-4">

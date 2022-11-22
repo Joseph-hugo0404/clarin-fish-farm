@@ -37,7 +37,6 @@
 							<th>Beetle Fish Stocks</th>
 
 							<th>Cat Fish Stocks</th>
-							<th>Date Added</th>
 
 							<th>Action</th>
 						</tr>
@@ -79,10 +78,6 @@ $(function(){
 			{
 				data:'cat_fish_stock',
 				name:'cat_fish_stock'
-			},
-			{
-				data:'date_added',
-				name:'date_added'
 			},
 			{
 				data:'action',

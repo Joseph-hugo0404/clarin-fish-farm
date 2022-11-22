@@ -15,6 +15,13 @@
 		{{ session()->get('success') }}
 	</div>
 	@endif
+	@if(session()->has('error'))
+	<div class="alert alert-danger">
+		{{ session()->get('error') }}
+	</div>
+	@endif
+	<h2 class="text-left" style="font-size: 15px">In this table, all the transactions appear in here!</h2>
+	<hr>
 	<div class="">
 		<div class="row2">
 			<div class="col col-md-6">List of Transaction</div>

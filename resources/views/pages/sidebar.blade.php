@@ -28,7 +28,7 @@
         <li class="nav-item">
                 <a class="nav-link" href="{{url('/stock')}}">
                     <i class="fas fa-th"></i>
-                        <span>List of Stock</span></a>
+                        <span>Number of Stock</span></a>
              </li>
 
         <li class="nav-item">
@@ -47,6 +47,12 @@
             <a class="nav-link" href="{{url('/production')}}">
                 <i class="fas fa-chart-area"></i>
                 <span>Production</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{{url('/view_admin')}}">
+                <i class="fas fa-user"></i>
+                <span>Users</span></a>
         </li>
         
     <!-- Sidebar Toggler (Sidebar) -->

@@ -14,6 +14,6 @@ class UserController extends Controller
         return view('profile.profile',[
             'user' => $user
         ]);
-    }
+    }   
     
 }
