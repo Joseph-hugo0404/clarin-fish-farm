@@ -4,14 +4,14 @@
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/customer">Customer</a></li>
-      <li class="breadcrumb-item active">Show Customer</li>
+      <li class="breadcrumb-item"><a href="/customer">Farmers</a></li>
+      <li class="breadcrumb-item active">Show Farmer</li>
     </ol>
 </nav>
 <div class="card mb-4 mt-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        View Customer
+        View Farmer
         <a href="{{url('customer')}}" class="float-end btn btn-sm btn-success">View All</a>
     </div>
     <div class="card-body">

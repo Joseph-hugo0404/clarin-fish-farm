@@ -57,15 +57,6 @@
 		        			<span class="text-danger">{{ $errors->first('cat_fish_stock') }}</span>
 		        		@endif
 		        	</div>
-
-					<div class="form-group mb-3">
-		        		<label><b>Date Added</b></label>
-		        		<input type="date" name="date_added" class="form-control" placeholder="date_added">
-		        		@if($errors->has('date_added'))
-		        			<span class="text-danger">{{ $errors->first('date_added') }}</span>
-		        		@endif
-		        	</div>
-
 		        	<div class="form-group mb-3">
 		        		<input type="submit" class="btn btn-primary" value="Add" />
 		        	</div>

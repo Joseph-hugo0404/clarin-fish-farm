@@ -10,6 +10,7 @@
               <h3>{{ $total_admin }}</h3>
     
               <p>Total Users</p>
+              <a class="text-white" href="/view_admin">view details</a>
             </div>
             <div class="icon">
                 <i class="fa-solid fa-users"></i>
@@ -23,14 +24,15 @@
             <div class="inner">
                 <h3>{{ $total_transaction }}</h3>
 
-                <p>Transactions Log</p>
-              </div>
-              <div class="icon ">
+                <p>Transaction Log</p>
+                <a class="text-white" href="/all_transaction">view details</a>
+            </div>
+            <div class="icon ">
                 <i class="fa-sharp fa-solid fa-arrow-right-arrow-left"></i>
             </div>
-            
-          </div>
-        </div>
+              </div>
+              
+    </div>
     
         <div class="col-xl-3 col-md-4 mb-4">
             <div class="small-box bg-red text-white">
@@ -38,6 +40,7 @@
                   <h3>{{ $total_stocks }}</h3>
         
                   <p>Total Fish Stock</p>
+                  <a class="text-white" href="/stock">view details</a>
                 </div>
                 <div class="icon">
                     <i class="fa-solid fa-fish"></i>
@@ -52,6 +55,7 @@
               <h3>{{ $total_fish_sold  }}</h3>
     
               <p>Total Sold Fish</p>
+              <a class="text-white" href="/all_transaction">view details</a>
             </div>
             <div class="icon">
               <i class="fa-solid fa-peso-sign"></i>
@@ -68,7 +72,7 @@
     <p class="card-text">Unknown to many but the fishpond operators, the Municipality of
        Clarin is home to the Regional Freshwater Fisheries Center. The Center is located at <b>barangay Caluwasan </b> 
        and is known to the local inhabitants as the <b>Clarin Freshwater Fish Farm.</b> </p>
-       <img src="{{asset('images/farm.png')}}" style="position: relative; width: 90%; height: 90vh" alt="">
+       <img src="{{asset('images/farm.png')}}" style="position: relative; width: 65%; height: 50vh" alt="">
   </div>
 </div>
 <hr>

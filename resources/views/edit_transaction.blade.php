@@ -91,7 +91,7 @@
 	</div>
 
 
-	<div class="col-md-4 mx-auto">
+	<div class="col-md-4 ms-auto">
 		<div class="card">
 			<div class="card-header">Add New Transaction</div>
 			<div class="card-body">

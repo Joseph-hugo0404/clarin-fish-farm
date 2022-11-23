@@ -55,7 +55,6 @@ class StockController extends Controller
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
             'cat_fish_stock'     =>  'required',
-            'date_added'      =>  'required',
  
         ]);
 
@@ -68,7 +67,6 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
-                'date_added'  =>  $data['date_added'],
         ]);
 
         return redirect('stock')->with('success', 'Successfully Added');
@@ -90,7 +88,6 @@ class StockController extends Controller
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
             'cat_fish_stock'     =>  'required',
-            'date_added'     =>  'required'
  
         ]);
 
@@ -104,7 +101,6 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
-                'date_added'  =>  $data['date_added'],
             );
         }
         else
@@ -115,7 +111,6 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
-                'date_added'  =>  $data['date_added'],
             );
         }
 

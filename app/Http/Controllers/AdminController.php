@@ -18,5 +18,4 @@ class AdminController extends Controller
         $data = User::all();
         return view('view_admin', compact('data'));
     }
-
 }

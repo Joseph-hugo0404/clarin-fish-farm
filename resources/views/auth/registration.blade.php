@@ -32,7 +32,7 @@
 				  <!-- Name input -->
 				  <div class="form-outline mb-4">
 					  <div class="input-group mb-3">
-						<div class="input-group-text bg-info text-white"><i class="fa-solid fa-envelope"></i></div>
+						<div class="input-group-text bg-info text-white"><i class="fa-solid fa-user"></i></div>
 							<input type="Text" name="name" class="form-control" placeholder="Name" />
 								@if($errors->has('name'))
 									<span class="text-danger">{{ $errors->first('name') }}</span>
@@ -54,7 +54,7 @@
                   <!-- Password input -->
 				  <div class="form-outline mb-4">
 					<div class="input-group mb-3">
-					<div class="input-group-text bg-danger text-white"><i class="fa-solid fa-user"></i></div>
+					<div class="input-group-text bg-danger text-white"><i class="fa-solid fa-lock"></i></div>
 					<input type="password" name="password" class="form-control" placeholder="Password" />
                         @if ($errors->has('password'))
                             <span class="text-danger">{{ $errors->first('password') }}</span>

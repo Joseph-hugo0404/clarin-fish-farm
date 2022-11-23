@@ -40,7 +40,7 @@
         <li class="nav-item">
             <a class="nav-link active" href="{{url('/customer')}}">
                 <i class="fa-solid fa-list"></i>
-                <span>Customers</span></a>
+                <span>Farmers</span></a>
         </li>
 
         <li class="nav-item">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonthlyTable extends Migration
+class CreateYearlyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateMonthlyTable extends Migration
      */
     public function up()
     {
-        Schema::create('monthly', function (Blueprint $table) {
+        Schema::create('yearly', function (Blueprint $table) {
             $table->id();
-            $table->string('transaction_month');
-            $table->Integer('transaction_year');
             $table->Integer('tilapia');
             $table->Integer('ornamental');
             $table->Integer('carp');
@@ -33,6 +31,6 @@ class CreateMonthlyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monthly');
+        Schema::dropIfExists('yearlies');
     }
 }

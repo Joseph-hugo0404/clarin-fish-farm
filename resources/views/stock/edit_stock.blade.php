@@ -58,13 +58,15 @@
 								<span class="text-danger">{{ $errors->first('date_added') }}</span>
 							@endif
 						  </div>
-						<div class="form-row">
+						
+					</div>
+					<div class="form-row">
 						<div class="form-group mb-3">
 							<input type="hidden" name="hidden_id" value="{{ $data->id }}" />
 							<input type="submit" class="btn btn-primary" value="Edit" />
 						</div>
 					</div>
-					</div>
+
 					</form>
 				</div>
 			</div>

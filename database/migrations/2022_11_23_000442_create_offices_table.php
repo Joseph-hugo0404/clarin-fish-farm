@@ -16,8 +16,10 @@ class CreateOfficesTable extends Migration
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('staff_id')->unsigned();
+            $table->bigInteger('fish_id')->unsigned();
             $table->timestamps();
-            $table->foreign('staff_id')->references('id')->on('all_transaction');
+            $table->foreign('staff_id')->references('id')->on('users');
+            $table->foreign('fish_id')->references('id')->on('all_transaction');
         });
     }
 

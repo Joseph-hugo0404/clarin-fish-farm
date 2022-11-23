@@ -32,7 +32,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register');
     Route::post('custom-registration', [CustomAuthController::class, 'custom_registration'])->name('register.custom');
     Route::get('login', [CustomAuthController::class, 'index'])->name('login');
@@ -88,5 +87,7 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('stock/delete/{id}', [StockController::class, 'delete'])->name('stock.delete');
 
     Route::get('view_admin', [AdminController::class, 'index']);
+    Route::get('view_admin/{id}/delete',[AdminContoller::class,'destroy']);
     Route::resource('view_admin',AdminController::class);
+    
 });

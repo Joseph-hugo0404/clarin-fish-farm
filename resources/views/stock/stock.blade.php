@@ -8,6 +8,8 @@
     	<li class="breadcrumb-item active"></li>	
   	</ol>
 </nav>
+<h2 class="text-left" style="font-size: 15px">In this table, all the stocks of Fish appear in here!</h2>
+<hr>
 
 <div class="mt-4 mb-4">
 	@if(session()->has('success'))
@@ -16,14 +18,6 @@
 	</div>
 	@endif
 	<div class="card">
-		<div class="card-header">
-			<div class="row2">
-				<div class="col col-md-6">
-					<a href="{{ route('stock.add') }}" class="btn btn-success btn-sm float-end" data-toggle="tooltip" data-placement="top" title="Add Stock"><i class="fa fa-plus" aria-hidden="true"></i></a>
-					
-				</div>
-			</div>
-		</div>
 		<div class="card-body">
 			<div class="table-responsive">
 				<table class="table table-bordered table-hover" id="stock_table">

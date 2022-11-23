@@ -22,12 +22,12 @@ class DatabaseSeeder extends Seeder
             'beetle_fish_stock' => '0',
         ]);
 
-        DB::table('all_transaction')->insert([
-            'tilapia' => '0',
-            'carp' => '0',
-            'ornamental' => '0',
-            'cat_fish' => '0',
-            'beetle_fish' => '0',
-        ]);
+        // DB::table('all_transaction')->insert([
+        //     'tilapia' => '1',
+        //     'carp' => '1',
+        //     'ornamental' => '1',
+        //     'cat_fish' => '1',
+        //     'beetle_fish' => '1',
+        // ]);
     }
 }

@@ -16,7 +16,11 @@ class CreateProductionsTable extends Migration
         Schema::create('productions', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('product_id')->unsigned();
+            $table->bigInteger('graph_id')->unsigned();
+            $table->bigInteger('month_id')->unsigned();
+            $table->foreign('month_id')->references('id')->on('monthly');
             $table->foreign('product_id')->references('id')->on('all_transaction');
+            $table->foreign('graph_id')->references('id')->on('graphs');
             $table->timestamps();
         });
     }
