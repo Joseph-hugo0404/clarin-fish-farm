@@ -15,6 +15,7 @@ class CreateMonthlyTable extends Migration
     {
         Schema::create('monthly', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('fish_id')->unsigned();
             $table->string('transaction_month');
             $table->Integer('transaction_year');
             $table->Integer('tilapia');
@@ -22,6 +23,7 @@ class CreateMonthlyTable extends Migration
             $table->Integer('carp');
             $table->Integer('beetle_fish');
             $table->Integer('cat_fish');
+            $table->foreign('fish_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

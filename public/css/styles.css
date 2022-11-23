@@ -73,6 +73,26 @@ body {
     background-image: linear-gradient(180deg, #f3f3f3 10%, #dddddd 100%);
 }
 
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #ffffff;
+}
+
+.sidebar .nav-link.active {
+  color: rgb(213, 213, 213);
+}
+
+.row3 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: 5rem;
+}
+
 #login-logo {
     width: 50%;
 }

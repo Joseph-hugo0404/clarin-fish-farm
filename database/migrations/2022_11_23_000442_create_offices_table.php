@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCrudEventsTable extends Migration
+class CreateOfficesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCrudEventsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crud_events', function (Blueprint $table) {
+        Schema::create('offices', function (Blueprint $table) {
             $table->id();
-            $table->string('event_name');
-            $table->date('event_start');
-            $table->date('event_end');            
+            $table->bigInteger('staff_id')->unsigned();
             $table->timestamps();
+            $table->foreign('staff_id')->references('id')->on('all_transaction');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateCrudEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crud_events');
+        Schema::dropIfExists('offices');
     }
 }

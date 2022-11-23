@@ -28,7 +28,6 @@
 @endsection
 
 @section('content')
-@include('profile.profile-cropper')
 <h1>User Profile </h1>
 <hr>
 <div class="row mt-4">
@@ -37,20 +36,16 @@
 		{{ session()->get('success') }}
 	</div>
 
-    <p>
-        <img src="{{asset('public/images/'.$data->photo)}}" width="200" />
-        <input type="hidden" name="prev_photo" value="{{$data->photo}}" />
-    </p>
 
 	@endif
     <div class="col-md-3">
         <div class="position-relative" style="border-radius: 50%; overflow:hidden;">
             <div style="margin-top: 100%"></div>
             <img src="{{$user->profile_pic}}" style="width: 100%; top:0; left:0; position: absolute; cursor: pointer" alt="" id="profile-pic">
-            <span class="position-absolute text-center w-100" style="opacity: 0; color: rgb(224, 224, 224); bottom: 0px; z-index: 10; background-color: rgba(50,50,50,0.5); padding: 0; pointer-events: none" id="change-label">
+            {{-- <span class="position-absolute text-center w-100" style="opacity: 0; color: rgb(224, 224, 224); bottom: 0px; z-index: 10; background-color: rgba(50,50,50,0.5); padding: 0; pointer-events: none" id="change-label">
                 <i class="fa fa-camera"></i> Change
-            </span>
-            <input type="file" accept="image/png, image/jpeg" style="display: none" id="image-input">
+            </span> --}}
+            {{-- <input type="file" accept="image/png, image/jpeg" style="display: none" id="image-input"> --}}
         </div>
         <div class="alert alert-warning mt-2" style="display: none" id="profile-pic-alert">
             Make sure to click on Save Changes to update your profile picture.

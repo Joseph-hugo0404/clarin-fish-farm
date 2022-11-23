@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
-        <a class="nav-link" href="{{url('/dashboard')}}">
+        <a class="nav-link active" href="{{url('/dashboard')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -26,31 +26,31 @@
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
         <li class="nav-item">
-                <a class="nav-link" href="{{url('/stock')}}">
+                <a class="nav-link {{ Request::segment(1) == 'stock' ? 'active' : '' }}" aria-current="page" href="{{url('/stock')}}">
                     <i class="fas fa-th"></i>
                         <span>Number of Stock</span></a>
              </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/all_transaction')}}">
+            <a class="nav-link active" href="{{url('/all_transaction')}}">
                 <i class="fas fa-file-invoice-dollar"></i>
                 <span>Transaction</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/customer')}}">
+            <a class="nav-link active" href="{{url('/customer')}}">
                 <i class="fa-solid fa-list"></i>
                 <span>Customers</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/production')}}">
+            <a class="nav-link active" href="{{url('/production')}}">
                 <i class="fas fa-chart-area"></i>
                 <span>Production</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="{{url('/view_admin')}}">
+            <a class="nav-link active" href="{{url('/view_admin')}}">
                 <i class="fas fa-user"></i>
                 <span>Users</span></a>
         </li>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFishTable extends Migration
+class CreateProductionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateFishTable extends Migration
      */
     public function up()
     {
-        Schema::create('fish', function (Blueprint $table) {
+        Schema::create('productions', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('fish_id')->unsigned();
-            $table->string('name');
-            $table->foreign('fish_id')->references('id')->on('customers');
+            $table->bigInteger('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('all_transaction');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateFishTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fish');
+        Schema::dropIfExists('productions');
     }
 }
