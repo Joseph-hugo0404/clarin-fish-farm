@@ -61,7 +61,6 @@ class StockController extends Controller
         $data = $request->all();
         
         Stock::create([
-
                 'tilapia_stock'     =>  $data['tilapia_stock'],
                 'ornamental_stock'     =>  $data['ornamental_stock'],
                 'carp_stock'     =>  $data['carp_stock'],

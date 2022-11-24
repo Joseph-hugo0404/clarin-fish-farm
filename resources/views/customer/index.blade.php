@@ -10,6 +10,7 @@
       <li class="breadcrumb-item active">Farmers List</li>
     </ol>
 </nav>
+<h2 class="text-left" style="font-size: 15px">In this table, all the Farmers' Information appear in here!</h2>
 
     <div class="">
          <a href="{{url('customer/create')}}" class="float-end btn btn-sm btn-success">Add New</a>
@@ -17,6 +18,7 @@
         @if(Session::has('msg'))
         <p class="text-success">{{session('msg')}}</p>
         @endif
+        
         <div class="card-body">
             <table class="table table-striped table-bordered">
                 <thead>

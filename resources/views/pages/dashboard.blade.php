@@ -66,10 +66,10 @@
 </div>
 <hr>
 <div class="card text-center">
-  <div class="card-body">
-    <h5 class="card-title"> <b>About Us</b> </h5>
+  <div class="card-body" style="background-color: rgb(160, 219, 223)">
+    <h5 class="card-title" style="color: black"> <b>About Us</b> </h5>
     
-    <p class="card-text">Unknown to many but the fishpond operators, the Municipality of
+    <p class="card-text" style="color: black">Unknown to many but the fishpond operators, the Municipality of
        Clarin is home to the Regional Freshwater Fisheries Center. The Center is located at <b>barangay Caluwasan </b> 
        and is known to the local inhabitants as the <b>Clarin Freshwater Fish Farm.</b> </p>
        <img src="{{asset('images/farm.png')}}" style="position: relative; width: 65%; height: 50vh" alt="">

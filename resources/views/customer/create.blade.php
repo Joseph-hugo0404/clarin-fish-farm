@@ -8,6 +8,7 @@
       <li class="breadcrumb-item active">Add New</li>
     </ol>
 </nav>
+<h2 class="text-left" style="font-size: 15px">In this table, adding farmer appear here!</h2>
 
     <div class="card-header">
         <i class="fas fa-table me-1"></i>

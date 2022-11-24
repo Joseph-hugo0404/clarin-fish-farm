@@ -1,13 +1,14 @@
 @extends('main')
 @section('content') 
 
-<h2 class="mt-3">Yearly Production Management</h2>
+<h2 class="mt-3">Annual Production</h2>
 <nav aria-label="breadcrumb">
   	<ol class="breadcrumb">
     	<li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
     	<li class="breadcrumb-item active">Production</li>	
   	</ol>
 </nav>
+<h2 class="text-left" style="font-size: 15px">In this chart, Total Annual productions appear in here!</h2>
 <canvas id="myChart" height="100px" style="margin-top: 2%"></canvas>
 <a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production_weekly"><i class="fa-solid fa-chart-column"></i> Weekly</a>
 <a class="btn btn-success btn-sm" {{ Request::segment(1) == 'production' ? 'active' : '' }}" aria-current="page" href="/production"><i class="fa-solid fa-chart-column"></i> Monthly</a>
