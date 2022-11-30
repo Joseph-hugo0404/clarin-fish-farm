@@ -34,7 +34,7 @@ class StockController extends Controller
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<a href="/stock/edit/'.$row->id.'" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete" data-id="'.$row->id.'"><i class="fas fa-trash"></i></button>';
+                        return '<a href="/stock/edit/'.$row->id.'" class="btn bg-green btn-sm"><i class="fas fa-plus"></i></a>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -55,6 +55,7 @@ class StockController extends Controller
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
             'cat_fish_stock'     =>  'required',
+            'date_added'     =>  'required',
  
         ]);
 
@@ -66,6 +67,7 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'     =>  $data['date_added'],
         ]);
 
         return redirect('stock')->with('success', 'Successfully Added');
@@ -87,7 +89,8 @@ class StockController extends Controller
             'carp_stock'      =>  'required',
             'beetle_fish_stock'     =>  'required',
             'cat_fish_stock'     =>  'required',
- 
+            'date_added'     =>  'required',
+            
         ]);
 
         $data = $request->all();
@@ -100,6 +103,7 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'     =>  $data['date_added'],
             );
         }
         else
@@ -110,6 +114,7 @@ class StockController extends Controller
                 'carp_stock'     =>  $data['carp_stock'],
                 'beetle_fish_stock'     =>  $data['beetle_fish_stock'],
                 'cat_fish_stock'     =>  $data['cat_fish_stock'],
+                'date_added'     =>  $data['date_added'],
             );
         }
 

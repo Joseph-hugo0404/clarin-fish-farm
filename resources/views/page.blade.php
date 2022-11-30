@@ -12,7 +12,9 @@
         
         
         <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{asset('vendor/simple-datatables/style.css') }}">
 
         <!--<h1 class="mt-4 mb-5 text-center">Clarin Freshwater Fish Farm Record Management System</h1>-->
         <script src="{{asset('js/jquery.js')}}"></script> 
@@ -25,15 +27,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesosme/6.2.1/js/all.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/bootstrap.js') }}"></script>
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="{{asset('vendor/simple-datatables/simple-datatables.js')}}"></script>  
+
+        <script>
+            // Simple Datatable
+            let table1 = document.querySelector('#table1');
+            let dataTable = new simpleDatatables.DataTable(table1);
+        </script>
         
         <script src="{{asset('js/scripts.js')}}"></script>
             
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
         <script src="{{asset('js/datatables-simple-demo.js')}}"></script>
+
+
         
         @yield('heads')
         

@@ -4,7 +4,6 @@
 <h2 class="mt-3">Transaction Management</h2>
 <nav aria-label="breadcrumb">
   	<ol class="breadcrumb">
-    	<li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
     	<li class="breadcrumb-item active">Transaction List</li>	
   	</ol>
 </nav>
@@ -34,7 +33,7 @@
 	<div class="card">
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-striped table-bordered" id="all_transaction_table">
+				<table class="table table-striped" id="all_transaction_table">
 					<thead>
 						<tr>
 							<th>Name</th>
@@ -50,7 +49,6 @@
 						</tr>
 					</thead>
 					<tbody>
-						
 					</tbody>
 				</table>
 			</div>

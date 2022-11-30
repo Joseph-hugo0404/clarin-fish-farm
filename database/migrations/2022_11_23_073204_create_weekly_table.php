@@ -15,11 +15,13 @@ class CreateWeeklyTable extends Migration
     {
         Schema::create('weekly', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('week_id')->unsigned();
             $table->Integer('tilapia');
             $table->Integer('ornamental');
             $table->Integer('carp');
             $table->Integer('beetle_fish');
             $table->Integer('cat_fish');
+            $table->foreign('week_id')->references('id')->on('productions');
             $table->timestamps();
         });
     }

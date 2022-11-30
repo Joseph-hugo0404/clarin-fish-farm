@@ -84,10 +84,10 @@ Route::group(['middleware'=>'auth'], function() {
 
     Route::post('/stock/edit_validation', [StockController::class, 'edit_validation'])->name('stock.edit_validation');
 
-    Route::get('stock/delete/{id}', [StockController::class, 'delete'])->name('stock.delete');
+    Route::get('stock/delete/{id}', [StockController::class, 'delete'])->name('stock.delete'); 
 
     Route::get('view_admin', [AdminController::class, 'index']);
-    Route::get('view_admin/{id}/delete',[AdminContoller::class,'destroy']);
+    Route::get('view_admin/{id}/delete',[AdminController::class,'delete'])->name('view_admin.delete');
     Route::resource('view_admin',AdminController::class);
     
 });

@@ -11,5 +11,5 @@ class Stock extends Model
     public $timestamps = false;
     protected $table = 'stock';
     protected $primaryKey = 'id';
-    protected $fillable = ['tilapia', 'ornamental', 'carp', 'beetle_fish', 'cat_fish'];
+    protected $fillable = ['tilapia', 'ornamental', 'carp', 'beetle_fish', 'cat_fish', 'date_added'];
 }

@@ -20,7 +20,7 @@ class CreateStockTable extends Migration
             $table->Integer('carp_stock');
             $table->Integer('beetle_fish_stock');
             $table->Integer('cat_fish_stock');
-            $table->string('date_added');
+            $table->string('date_added'); 
             //$table->timestamps();
         });
     }

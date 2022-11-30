@@ -15,11 +15,14 @@ class CreateOfficesTable extends Migration
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
+            $table->string('office_name');
+            $table->string('office_address');
+            $table->string('office_phone');
             $table->bigInteger('staff_id')->unsigned();
-            $table->bigInteger('fish_id')->unsigned();
+            $table->bigInteger('office_id')->unsigned();
             $table->timestamps();
             $table->foreign('staff_id')->references('id')->on('users');
-            $table->foreign('fish_id')->references('id')->on('all_transaction');
+            $table->foreign('office_id')->references('id')->on('all_transaction');
         });
     }
 

@@ -12,7 +12,7 @@
 </nav>
 <h2 class="text-left" style="font-size: 15px">In this table, all the Farmers' Information appear in here!</h2>
 
-    <div class="">
+    <div class="col-12 d-flex justify-content-end">
          <a href="{{url('customer/create')}}" class="float-end btn btn-sm btn-success">Add New</a>
         </div>
         @if(Session::has('msg'))
@@ -20,13 +20,14 @@
         @endif
         
         <div class="card-body">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered" id="table1">
                 <thead>
                     <tr>
                         <th>#</th>
                         <th>Full</th>
-                        <th>Mobile Number</th>
                         <th>Photo</th>
+                        <th>Mobile Number</th>
+                        
                         <th>Address</th>
                         <th>Action</th>
                 </tr>
@@ -37,8 +38,8 @@
                         <tr>
                             <td>{{$d->id}}</td>
                             <td>{{$d->full_name}}</td>
-                            <td>{{$d->mobile}}</td>
                             <td><img src="{{asset('public/images/'.$d->photo)}}" width="80" /></td>
+                            <td>{{$d->mobile}}</td>
                             <td>{{$d->address}}</td>
                             <td>
                                 <a href="{{url('customer/'.$d->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-eye"></i></a>

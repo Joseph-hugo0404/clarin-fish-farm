@@ -52,7 +52,7 @@
 							@endif
 						  </div>
 						  <div class="col-md-4 mb-3">
-							<label><b>Cat Fish Stock</b></label>
+							<label><b>Date Edited</b></label>
 							<input type="date" name="date_added" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="Date Added" value="{{ $data->date_added }}">
 							@if($errors->has('date_added'))
 								<span class="text-danger">{{ $errors->first('date_added') }}</span>
@@ -61,9 +61,9 @@
 						
 					</div>
 					<div class="form-row">
-						<div class="form-group mb-3">
+						<div class="col-12 d-flex justify-content-end">
 							<input type="hidden" name="hidden_id" value="{{ $data->id }}" />
-							<input type="submit" class="btn btn-primary" value="Edit" />
+							<input type="submit" class="btn btn-primary" value="Add" />
 						</div>
 					</div>
 

@@ -14,7 +14,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link active" href="{{url('/dashboard')}}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-home"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -57,7 +57,7 @@
         
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline ">
-        <button class="rounded-circle border-0" id="sidebarToggle" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        <button class="rounded-circle border-0" id="sidebarToggle" data-toggle="tooltip" data-placement="top" title="click">
         </button>
     </div>
 </ul>

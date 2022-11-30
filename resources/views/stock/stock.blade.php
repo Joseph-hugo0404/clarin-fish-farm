@@ -20,7 +20,7 @@
 	<div class="card">
 		<div class="card-body">
 			<div class="table-responsive">
-				<table class="table table-bordered table-hover" id="stock_table">
+				<table class="table table-bordered table-hover no-footer" id="stock_table">
 					<thead class="table-primary">
 						<tr> 
 							<th>Tilapia Stocks</th>
@@ -31,6 +31,7 @@
 							<th>Beetle Fish Stocks</th>
 
 							<th>Cat Fish Stocks</th>
+							<th>Date Added</th>
 
 							<th>Action</th>
 						</tr>
@@ -46,6 +47,10 @@ $(function(){
 	var table = $('#stock_table').DataTable({
 		processing:true,
 		serverSide:true,
+		seaching:false,
+		paging:false,
+		info:false,
+		dom:'lrtip',
 		ajax:"{{ route('stock.fetch_all') }}",
 		columns:[
 			
@@ -73,6 +78,12 @@ $(function(){
 				data:'cat_fish_stock',
 				name:'cat_fish_stock'
 			},
+			
+			{
+				data:'date_added',
+				name:'date_added'
+			},
+
 			{
 				data:'action',
 				name:'action',

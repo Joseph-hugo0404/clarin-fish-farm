@@ -14,7 +14,7 @@
 <div class="row3 mt-4">
 	<div class="col-md-5 mx-auto">
 		<div class="card">
-			<div class="card-header">Add New Transaction</div>
+			<div class="card-header">Add New Stock</div>
 			<div class="card-body">
 				<form method="POST" action="{{ route('stock.add_stock_fish') }}">
 					@csrf

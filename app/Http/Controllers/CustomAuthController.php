@@ -7,11 +7,16 @@ use App\Models\User;
 use App\Models\Stock;
 use App\Models\AllTransaction;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 use Hash;
 use Session;
 
 class CustomAuthController extends Controller
 {
+
+
+    protected $redirectTo = RouteServiceProvider::HOME;
+
     public function construct()
     {
         $this->middleware('auth')->only('logout');
