@@ -50,6 +50,18 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link active" href="{{url('/depart')}}">
+                <i class="fa-solid fa-mountain"></i>
+                <span>Fish Pond</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link active" href="{{url('/employee')}}">
+                <i class="fa-solid fa-bars-progress"></i>
+                <span>Harvest Pond</span></a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link active" href="{{url('/view_admin')}}">
                 <i class="fas fa-user"></i>
                 <span>Users</span></a>

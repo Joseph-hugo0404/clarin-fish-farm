@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDepartmentsTable extends Migration
+class CreateHarvestsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('departments', function (Blueprint $table) {
+        Schema::create('harvests', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->integer('department_id');
+            $table->string('date');
             $table->string('pond_size');
             $table->string('fish_name');
-            $table->date('date_added');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('harvests');
     }
 }

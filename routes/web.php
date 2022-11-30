@@ -9,10 +9,14 @@ use App\Http\Controllers\AllTransactionController;
 use App\Http\Controllers\GraphController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\EmployeeContoller;
 use App\Http\Controllers\CustomerContoller;
+use App\Http\Controllers\Customer1Contoller;
 use App\Http\Controllers\CalenderController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PondController;
+use App\Http\Controllers\HarvestController;
 
 
 /*
@@ -89,5 +93,13 @@ Route::group(['middleware'=>'auth'], function() {
     Route::get('view_admin', [AdminController::class, 'index']);
     Route::get('view_admin/{id}/delete',[AdminController::class,'delete'])->name('view_admin.delete');
     Route::resource('view_admin',AdminController::class);
+
     
+
+    Route::get('depart/{id}/delete',[DepartmentController::class,'destroy']);
+Route::resource('depart',DepartmentController::class);
+
+// Employee Resource
+Route::get('employee/{id}/delete',[EmployeeContoller::class,'destroy']);
+Route::resource('employee',EmployeeContoller::class);
 });

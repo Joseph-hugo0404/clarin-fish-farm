@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Department;
-
-class DepartmentController extends Controller
+use App\Models\Harvest;
+class EmployeeContoller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,9 @@ class DepartmentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $data=Department::orderBy('id','desc')->get();
-        return view('department.index',['data'=>$data]);
+    {
+        $data=Harvest::orderBy('id','desc')->get();
+        return view('employee.index',['data'=>$data]);
     }
 
     /**
@@ -25,7 +25,8 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        return view('department.create');
+        $data=Department::orderBy('id','desc')->get();
+        return view('employee.create',['departments'=>$data]);
     }
 
     /**
@@ -37,20 +38,19 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>'required',
+            'date'=>'required',
             'fish_name'=>'required',
             'pond_size'=>'required',
-            'date_added'=>'required'
         ]);
 
-        $data=new Department();
-        $data->title=$request->title;
+        $data=new Harvest();
+        $data->department_id=$request->depart;
+        $data->date=$request->date;
         $data->fish_name=$request->fish_name;
         $data->pond_size=$request->pond_size;
-        $data->date_added=$request->date_added;
         $data->save();
 
-        return redirect('depart')->with('msg','Data has been submitted');
+        return redirect('employee/create')->with('msg','Data has been submitted');
     }
 
     /**
@@ -61,8 +61,8 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
-        $data=Department::find($id);
-        return view('department.show',['data'=>$data]);
+        $data=Harvest::find($id);
+        return view('employee.show',['data'=>$data]);
     }
 
     /**
@@ -73,8 +73,9 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        $data=Department::find($id);
-        return view('department.edit',['data'=>$data]);
+        $departs=Department::orderBy('id','desc')->get();
+        $data=Harvest::find($id);
+        return view('employee.edit',['departs'=>$departs,'data'=>$data]);
     }
 
     /**
@@ -87,20 +88,19 @@ class DepartmentController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title'=>'required',
+            'date'=>'required',
             'fish_name'=>'required',
             'pond_size'=>'required',
-            'date_added'=>'required'
         ]);
 
-        $data=Department::find($id);
-        $data->title=$request->title;
+        $data=Harvest::find($id);
+        $data->department_id=$request->depart;
+        $data->date=$request->date;
         $data->fish_name=$request->fish_name;
         $data->pond_size=$request->pond_size;
-        $data->date_added=$request->date_added;
         $data->save();
 
-        return redirect('depart/')->with('msg','Data has been updated');
+        return redirect('employee/'.$id.'/edit')->with('msg','Data has been submitted');
     }
 
     /**
@@ -111,7 +111,7 @@ class DepartmentController extends Controller
      */
     public function destroy($id)
     {
-        Department::where('id',$id)->delete();
-        return redirect('depart');
+        Harvest::where('id',$id)->delete();
+        return redirect('employee');
     }
 }
