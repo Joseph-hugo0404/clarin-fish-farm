@@ -28,7 +28,7 @@
 							
 							<th>Carp Stocks</th>
 
-							<th>Beetle Fish Stocks</th>
+							<th>Prawn Fish Stocks</th>
 
 							<th>Cat Fish Stocks</th>
 							<th>Date Added</th>

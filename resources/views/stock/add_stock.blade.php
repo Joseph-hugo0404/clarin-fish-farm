@@ -43,7 +43,7 @@
 		        	</div>
 
                     <div class="form-group mb-3">
-		        		<label><b>Beetle Fish Stock</b></label>
+		        		<label><b>Prawn Fish Stock</b></label>
 		        		<input type="number" name="beetle_fish_stock" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="beetle_fish">
 		        		@if($errors->has('beetle_fish_stock'))
 		        			<span class="text-danger">{{ $errors->first('beetle_fish_stock') }}</span>

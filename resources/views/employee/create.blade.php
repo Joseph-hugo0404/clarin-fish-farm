@@ -3,8 +3,6 @@
 @section('content')
 <div class="card mb-4 mt-4">
     <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        Create Employee
         <a href="{{url('employee')}}" class="float-end btn btn-sm btn-success">View All</a>
     </div>
     <div class="card-body">
@@ -22,10 +20,10 @@
             @csrf
             <table class="table table-striped">
                 <tr>
-                    <th>Department</th>
+                    <th>Fish Pond Name</th>
                     <td>
                         <select name="depart" class="form-control">
-                            <option value="">-- Select Department --</option>
+                            <option value="">-- Select Pond --</option>
                             @foreach($departments as $depart)
                                 <option value="{{$depart->id}}">{{$depart->title}}</option>
                             @endforeach
@@ -45,7 +43,7 @@
                             <option selected>Choose .....</option>
                             <option value="Tilapia">Tilapia</option>
                             <option value="Ornamental Fish">Ornamental Fish</option>
-                            <option value="Carp">Carp</option>
+                            <option value="Carp">Carp</option> 
                             <option value="Prawn Fish">Prawn Fish</option>
                             <option value="Cat Fish">Cat Fish</option>
                           </select>

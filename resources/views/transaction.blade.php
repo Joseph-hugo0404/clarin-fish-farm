@@ -46,7 +46,7 @@
             <th>Tilapia</th>
             <th>Ornamental</th>
             <th>Carp</th>
-            <th>Beetle Fish</th>
+            <th>Prawn Fish</th>
             <th>Cat Fish</th>
         </tr>
         @foreach($transaction as $transaction)

@@ -23,10 +23,10 @@
             @csrf
             <table class="table table-bordered">
                 <tr>
-                    <th>Department</th>
+                    <th>Fish Pond Name</th>
                     <td>
                         <select name="depart" class="form-control">
-                            <option value="">-- Select Department --</option>
+                            <option value="">-- Select Pond --</option>
                             @foreach($departs as $depart)
                                 <option @if($depart->id==$data->department_id) selected @endif value="{{$depart->id}}">{{$depart->title}}</option>
                             @endforeach

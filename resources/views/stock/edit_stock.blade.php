@@ -38,8 +38,8 @@
 							@endif
 						  </div>
 						  <div class="col-md-4 mb-5">
-							<label><b>Beetle Fish Stock</b></label>
-							<input type="number" name="beetle_fish_stock" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="beetle_fish" value="{{ $data->beetle_fish }}">
+							<label><b>Prawn Fish</b></label>
+							<input type="number" name="beetle_fish_stock" min="0" oninput="validity.valid||(value='');" class="form-control" placeholder="Prawn_Fish" value="{{ $data->beetle_fish }}">
 							@if($errors->has('beetle_fish_stock'))
 								<span class="text-danger">{{ $errors->first('beetle_fish_stock') }}</span>
 							@endif

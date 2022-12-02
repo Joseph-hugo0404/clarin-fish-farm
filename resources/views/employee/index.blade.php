@@ -10,10 +10,9 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Department</th>
+                                            <th>Fish Pond Name</th>
                                             <th>Date Harvested</th>
                                             <th>Fish Name</th>
-                                            <th>Pond Size</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -25,7 +24,6 @@
 	                                            <td>{{$d->department->title}}</td>
                                                 <td>{{$d->date}}</td>
                                                 <td>{{$d->fish_name}}</td>
-                                                <td>{{$d->pond_size}}</td>
                                                 <td>
                                                     <a href="{{url('employee/'.$d->id)}}" class="btn btn-warning btn-sm">Show</a>
                                                     <a href="{{url('employee/'.$d->id.'/edit')}}" class="btn btn-info btn-sm">Update</a>

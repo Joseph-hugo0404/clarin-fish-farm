@@ -62,7 +62,7 @@
                   borderColor: 'rgb(255, 99, 132)',
                   
               }, {
-                  label: 'Beetle Fish',
+                  label: 'Prawn Fish',
                   data: @json($fishes['beetle_fish']),
                   backgroundColor: 'rgb(13, 186, 177)',
                   borderColor: 'rgb(255, 99, 132)',

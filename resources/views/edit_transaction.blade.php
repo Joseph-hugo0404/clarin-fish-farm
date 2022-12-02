@@ -204,8 +204,8 @@
 								@endif
 							</div>
 								<div class="form-group mb-3">
-								<label><b>Beetle Fish</b></label>
-								<input type="number" name="beetle_fish" min="0" oninput="validity.valid||(value='');" name="beetle_fish" class="form-control" placeholder="beetle_fish">
+								<label><b>Prawn Fish</b></label>
+								<input type="number" name="beetle_fish" min="0" oninput="validity.valid||(value='');" name="beetle_fish" class="form-control" placeholder="Prawn_Fish">
 								@if($errors->has('beetle_fish'))
 									<span class="text-danger">{{ $errors->first('beetle_fish') }}</span>
 								@endif
