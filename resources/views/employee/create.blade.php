@@ -50,12 +50,6 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Pond Size</th>
-                    <td>
-                        <input type="text" name="pond_size" class="form-control" />
-                    </td>
-                </tr>
-                <tr>
                     <td colspan="2">
                         <input type="submit" class="btn btn-primary" value="Submit" />
                     </td>

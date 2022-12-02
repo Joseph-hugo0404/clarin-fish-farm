@@ -106,12 +106,12 @@
   </div>
 </div>
 
-<div class="col-mb-3 ml-2" style="width: 18rem;">
-  <img class="card-img-top" src="{{asset('images/beetle.jpg')}}" alt="Card image cap">
+<div class="col-mb-3 ml-2" style="width: 16rem;">
+  <img class="card-img-top" src="{{asset('images/prawn.jpg')}}" alt="Card image cap">
   <div class="Small-box">
     <hr>
     <h5 class="card-title text-center">BEETLE FISH</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">are crustaceans with a shell, five pairs of swimming legs (pleopods), five pairs of walking legs, three with claws, and a tail..</p>
   </div>
 </div>
 </div>

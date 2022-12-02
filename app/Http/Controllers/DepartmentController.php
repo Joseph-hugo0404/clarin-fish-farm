@@ -14,7 +14,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {   
-        $data=Department::orderBy('id','desc')->get();
+        $data=Department::orderBy('id','asc')->get();
         return view('department.index',['data'=>$data]);
     }
 

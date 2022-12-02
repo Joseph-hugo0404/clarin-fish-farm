@@ -21,7 +21,7 @@
 	                                    	@foreach($data as $d)
 	                                        <tr>
 	                                            <td>{{$d->id}}</td>
-	                                            <td>{{$d->department->title}}</td>
+	                                            <td>{{$d->department->title ?? 'title'}}</td>
                                                 <td>{{$d->date}}</td>
                                                 <td>{{$d->fish_name}}</td>
                                                 <td>

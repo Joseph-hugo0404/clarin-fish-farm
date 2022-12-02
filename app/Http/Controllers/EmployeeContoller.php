@@ -73,7 +73,7 @@ class EmployeeContoller extends Controller
      */
     public function edit($id)
     {
-        $departs=Department::orderBy('id','desc')->get();
+        $departs=Department::orderBy('id','asc')->get();
         $data=Harvest::find($id);
         return view('employee.edit',['departs'=>$departs,'data'=>$data]);
     }
