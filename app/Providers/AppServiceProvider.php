@@ -8,6 +8,7 @@ use App\Observers\TeamObserver;
 use App\Models\Team;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -38,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
 
         Asset::observe(AssetObserver::class);
         Team::observe(TeamObserver::class);
+
+        Schema::defaultStringLength(125);
     }
 }
