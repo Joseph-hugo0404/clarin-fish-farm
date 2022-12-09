@@ -2,8 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Asset;
+use App\Observers\AssetObserver;
+use App\Observers\TeamObserver;
+use App\Models\Team;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +28,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(125);
+        Blade::if('admin', function () {
+            return auth()->check() && auth()->user()->roles()->where('role_id', 1)->first() != null;
+        });
+
+        Blade::if('user', function () {
+            return auth()->check() && auth()->user()->roles()->where('role_id', 2)->first() != null;
+        });
+
+        Asset::observe(AssetObserver::class);
+        Team::observe(TeamObserver::class);
     }
 }
