@@ -66,6 +66,25 @@
                                         </a>
                                     </li>
                                 @endcan
+                                <hr class="sidebar-divider d-none d-md-block">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/depart')}}">
+                                        <i class="fa-solid fa-mountain nav-icon"></i>
+                                        <span>Fish Pond</span></a>
+                                </li>
+                        
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/harvest')}}">
+                                        <i class="fa-solid fa-calendar nav-icon"></i>
+                                        <span>Harvest Pond</span></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/customer')}}">
+                                        <i class="fa fa-camera nav-icon" aria-hidden="true"></i>
+                                        <span>Farmer's Profile</span></a>
+                                </li>
                             </ul>
                         </li>
                     @endcan

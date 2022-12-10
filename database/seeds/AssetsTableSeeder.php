@@ -17,6 +17,11 @@ class AssetsTableSeeder extends Seeder
     public function run(): void
     {
         $assets = [
+            'Tilapia',
+            'Ornamental',
+            'Carp',
+            'Prawn Fish',
+            'Cat Fish',
         ];
 
         foreach ($assets as $asset) {

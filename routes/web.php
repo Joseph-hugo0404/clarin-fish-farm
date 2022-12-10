@@ -43,9 +43,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('transactions/{stock}/storeStock', 'TransactionsController@storeStock')->name('transactions.storeStock');
     Route::resource('transactions', 'TransactionsController')->only(['index']);
 
-    Route::get('depart/{id}/delete',[DepartmentController::class,'destroy']);
 
 });
+
+    Route::resource('harvest', 'HarvestController');
+    Route::resource('depart', 'DepartmentController');
+    Route::resource('customer', 'CustomerController');
+
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
     if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
