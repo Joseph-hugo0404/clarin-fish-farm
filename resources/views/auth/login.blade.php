@@ -15,7 +15,7 @@
 			  <div class="card-body py-5 px-md-5">
 				<main class="login-form">
 
-                    <h1>{{ trans('panel.site_title') }}</h1>
+                    <h1>Welcome Back!</h1>
 
 
                 @if(session('message'))
