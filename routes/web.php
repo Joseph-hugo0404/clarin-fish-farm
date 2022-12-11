@@ -1,5 +1,11 @@
 <?php
 
+// Route::get('/', function () {
+//     //return view('welcome');
+//     //return view('auth.registration');
+//     return view('auth.login');
+// });
+
 Route::redirect('/', '/login');
 Route::get('/home', function () {
     if (session('status')) {
