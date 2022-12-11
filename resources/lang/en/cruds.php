@@ -109,7 +109,7 @@ return [
             'id_helper'            => '',
             'asset'                => 'Asset',
             'asset_helper'         => '',
-            'current_stock'        => 'Current Stock',
+            'current_stock'        => 'Stock Bought',
             'current_stock_helper' => '',
             'created_at'           => 'Created at',
             'created_at_helper'    => '',
