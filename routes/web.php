@@ -47,8 +47,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 });
 
     Route::resource('harvest', 'HarvestController');
+    Route::get('harvest/{id}/delete', 'HarvestController@destroy');
     Route::resource('depart', 'DepartmentController');
+    Route::get('depart/{id}/delete', 'DepartmentController@destroy');
     Route::resource('customer', 'CustomerController');
+    Route::get('customer/{id}/delete', 'CustomerController@destroy');
 
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
